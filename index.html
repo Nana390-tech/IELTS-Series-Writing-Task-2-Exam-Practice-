@@ -3,540 +3,536 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Task 2 Essay Language 4: Why It Happens, How to Fix It</title>
+<title>IELTS Writing Task 2 Exam Practice: Agree or Disagree</title>
 <style>
-:root{--p:#a4471d;--pd:#73300f;--a:#0e8a82;--ai:#ffffff;--bg:#fbf4f0;--soft:#f6e6dc;}
+:root{--p:#1b2a4a;--pd:#111d36;--a:#ef6a45;--ai:#2f0a00;--bg:#f4f6fa;--soft:#e6eaf3;--ok:#1f8a4c;--warn:#c47a04;--bad:#cc3322}
 *{box-sizing:border-box}
 html{font-size:19px}
 body{margin:0;background:var(--bg);color:#1d2430;font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;line-height:1.6}
-button,input,textarea{font:inherit}
+button,input,textarea,select{font:inherit}
 button{cursor:pointer}
 :focus-visible{outline:3px solid var(--a);outline-offset:2px}
 .ar{direction:rtl;text-align:right;font-family:Tahoma,"Segoe UI","Noto Naskh Arabic",Arial,sans-serif;color:#5b6474;font-size:.95rem;margin:.2rem 0 .6rem}
-.ar.big{font-size:1.35rem;color:var(--pd);font-weight:700;text-align:center;margin:0 0 .4rem}
 .small{font-size:.85rem;color:#5b6474}
-
-/* header */
-.top{position:sticky;top:0;z-index:20;background:var(--pd);color:#fff;display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:center;justify-content:space-between;padding:.7rem 1.2rem}
+.top{position:sticky;top:0;z-index:20;background:var(--pd);color:#fff;display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between;padding:.6rem 1.1rem}
 .brand{display:flex;flex-direction:column;line-height:1.25}
-.series{font-size:.8rem;opacity:.8}
-.ltitle{font-size:1.15rem;font-weight:700}
-.tools{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
-.pill{background:var(--a);color:var(--ai);font-weight:700;border-radius:999px;padding:.2rem .8rem;font-size:.9rem;white-space:nowrap}
-.prog{width:120px;height:10px;background:rgba(255,255,255,.25);border-radius:6px;overflow:hidden}
-.prog i{display:block;height:100%;width:0;background:var(--a);transition:width .4s}
-.tbtn{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55);border-radius:8px;padding:.15rem .7rem;font-size:.85rem}
-.tbtn:hover{background:rgba(255,255,255,.12)}
-
-/* rail */
-#rail{display:flex;gap:.4rem;overflow-x:auto;padding:.8rem 1.2rem;background:#fff;border-bottom:1px solid #e3e6ec}
-.rs{flex:1 0 auto;min-width:118px;display:flex;align-items:center;gap:.5rem;border:2px solid #e3e6ec;background:#fff;border-radius:10px;padding:.35rem .6rem;text-align:left;color:#1d2430}
-.rs .n{flex:none;width:1.8rem;height:1.8rem;border-radius:50%;display:grid;place-items:center;background:#eef0f4;font-weight:700;font-size:.85rem}
-.rs .t{display:flex;flex-direction:column;line-height:1.15;font-size:.85rem;font-weight:600}
+.series{font-size:.78rem;opacity:.82}
+.ltitle{font-size:1.1rem;font-weight:700}
+.tools{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.clock{background:#fff;color:var(--pd);font-weight:800;border-radius:10px;padding:.15rem .8rem;font-variant-numeric:tabular-nums;font-size:1.25rem;letter-spacing:.02em}
+.clock.warn{background:#ffe9c9;color:#8a5a00}
+.clock.bad{background:#ffd9d4;color:#8a1c0d}
+.clock.off{background:#3b4a6b;color:#c8d2e6}
+.pill{background:var(--a);color:var(--ai);font-weight:700;border-radius:999px;padding:.15rem .8rem;font-size:.85rem;white-space:nowrap}
+.tbtn{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);border-radius:8px;padding:.1rem .65rem;font-size:.82rem}
+.tbtn:hover{background:rgba(255,255,255,.13)}
+#rail{display:flex;gap:.35rem;overflow-x:auto;padding:.7rem 1.1rem;background:#fff;border-bottom:1px solid #dfe3ec}
+.rs{flex:1 0 auto;min-width:112px;display:flex;align-items:center;gap:.45rem;border:2px solid #e0e4ec;background:#fff;border-radius:10px;padding:.3rem .55rem;text-align:left;color:#1d2430}
+.rs .n{flex:none;width:1.7rem;height:1.7rem;border-radius:50%;display:grid;place-items:center;background:#eef0f5;font-weight:700;font-size:.82rem}
+.rs .t{display:flex;flex-direction:column;line-height:1.15;font-size:.84rem;font-weight:600}
 .rs .t small{font-weight:400;color:#6b7383;font-family:Tahoma,Arial,sans-serif}
 .rs.on{border-color:var(--p);background:var(--soft)}
 .rs.on .n{background:var(--p);color:#fff}
 .rs.ok .n{background:var(--a);color:var(--ai)}
-
-main{max-width:900px;margin:0 auto;padding:1.4rem 1rem 2rem}
+.rs[disabled]{opacity:.45;cursor:not-allowed}
+main{max-width:920px;margin:0 auto;padding:1.3rem 1rem 2rem}
 footer{text-align:center;color:#6b7383;font-size:.85rem;padding:1.2rem 1rem 2rem}
-
-/* hero */
-.hero{display:grid;grid-template-columns:auto 1fr;gap:0 1.4rem;align-items:start;margin:.4rem 0 1.4rem}
-.hero .num{grid-row:span 4;font-size:6.5rem;line-height:.85;font-weight:800;color:var(--a);-webkit-text-stroke:3px var(--pd);paint-order:stroke fill}
-.hero h1{margin:.2rem 0 .3rem;font-size:2rem;line-height:1.2;color:var(--pd)}
-.hero .sub{margin:0 0 .2rem;font-size:1.05rem}
-.obj{background:#fff;border-left:6px solid var(--a);border-radius:0 10px 10px 0;padding:.7rem 1rem;margin-top:.5rem}
-.obj ul{margin:.3rem 0 0;padding-left:1.2rem}
-@media (max-width:620px){.hero{grid-template-columns:1fr}.hero .num{font-size:4rem;grid-row:auto}}
-
-/* cards */
-.card{background:#fff;border:1px solid #e3e6ec;border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:1rem}
-.card h2{margin:0 0 .4rem;font-size:1.5rem;color:var(--pd)}
-h3{color:var(--pd);font-size:1.25rem;margin:1.6rem 0 .6rem}
-.lead{margin:.2rem 0}
-.count{font-weight:700;color:var(--pd)}
-.row{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin-top:.8rem}
+.card{background:#fff;border:1px solid #dfe3ec;border-radius:14px;padding:1.1rem 1.3rem;margin-bottom:1rem}
+.card h2{margin:0 0 .4rem;font-size:1.45rem;color:var(--pd)}
+h3{color:var(--pd);font-size:1.18rem;margin:1.2rem 0 .5rem}
+.hero{display:grid;grid-template-columns:auto 1fr;gap:0 1.3rem;align-items:start;margin:.3rem 0 1.2rem}
+.hero .mark{font-size:3.4rem;line-height:1}
+.hero h1{margin:.1rem 0 .3rem;font-size:1.9rem;color:var(--pd);line-height:1.2}
+.hero p{margin:0}
 .btn{background:var(--p);color:#fff;border:0;border-radius:10px;padding:.55rem 1.2rem;font-weight:700}
 .btn:hover{background:var(--pd)}
 .btn.ghost{background:#fff;color:var(--pd);border:2px solid var(--p)}
 .btn.ghost:hover{background:var(--soft)}
+.btn.go{background:var(--a);color:var(--ai)}
+.btn.go:hover{background:#d9522c;color:#fff}
 .btn[disabled]{opacity:.45;cursor:not-allowed}
-
-/* notice */
-.passage{background:var(--soft);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0;font-size:1.08rem;line-height:1.95;word-spacing:-.05em}
-.passage p{margin:.2rem 0}
-.tok{cursor:pointer;border-radius:5px;padding:.05rem .08rem;margin:0 -.04rem;transition:background .2s}
-.tok:hover{background:rgba(0,0,0,.06)}
-.tok.hit{background:var(--a);color:var(--ai);font-weight:700}
-.tok.miss{background:#ffd9d9;animation:shake .35s}
-@keyframes shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
-
-/* word cards */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.9rem;margin-top:.8rem}
-.flip{perspective:900px;height:250px;cursor:pointer}
-.flip .in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
-.flip.on .in{transform:rotateY(180deg)}
-.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;padding:.9rem;display:flex;flex-direction:column}
-.front{background:var(--p);color:#fff;justify-content:center;align-items:center;text-align:center}
-.front b{font-size:1.45rem;line-height:1.25}
-.front .pos{font-size:.8rem;opacity:.85;margin-bottom:.3rem}
-.flip.seen .front{background:var(--pd)}
-.flip.seen .front::after{content:"✓";position:absolute;top:.5rem;right:.7rem;color:var(--a);font-weight:800}
-.say{margin-top:.8rem;background:rgba(255,255,255,.18);border:0;border-radius:999px;color:#fff;font-size:1.1rem;padding:.25rem .8rem}
-.back{background:#fff;border:3px solid var(--p);transform:rotateY(180deg);overflow:auto;font-size:.9rem}
-.back .def{margin:.2rem 0 .5rem;font-weight:600}
-.back .ex{margin:0;color:#3a4252;font-style:italic}
-@media (prefers-reduced-motion:reduce){.flip .in{transition:none}}
-
-/* marks */
-mark.lw{background:transparent;color:var(--pd);font-weight:700;border-bottom:3px solid var(--a);padding:0 .05em}
-.lk{border-bottom:3px dotted #e0467c;color:#b0205a;font-weight:600}
-.hide-lw mark.lw{color:inherit;font-weight:inherit;border:0}
-.hide-lk .lk{color:inherit;font-weight:inherit;border:0}
-
-/* items */
-.item{display:grid;grid-template-columns:2.2rem 1fr;gap:.8rem;background:#fff;border:1px solid #e3e6ec;border-radius:14px;padding:1rem 1.2rem;margin-bottom:.9rem}
-.item.done{border-color:var(--p)}
-.qnum{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--soft);color:var(--pd);font-weight:800;display:grid;place-items:center}
-.item.done .qnum{background:var(--p);color:#fff}
-.q{margin:.1rem 0 .6rem;font-size:1.05rem;font-weight:600}
-.gap{display:inline-block;min-width:5.5rem;border-bottom:3px solid var(--p);text-align:center;font-weight:700;color:var(--pd)}
-.opts{display:grid;gap:.5rem}
-.opt{text-align:left;background:#fff;border:2px solid #d8dde6;border-radius:10px;padding:.5rem .8rem;color:#1d2430}
-.opt:hover:not([disabled]){border-color:var(--p);background:var(--soft)}
-.opt.right{border-color:#1f8a4c;background:#e6f6ec;font-weight:700}
-.opt.wrong{border-color:#d33;background:#fdeaea;text-decoration:line-through;color:#8a3b3b}
-.opt[disabled]{cursor:default}
-.fb{margin-top:.7rem;border-radius:10px;padding:.55rem .8rem;font-size:.95rem}
-.fb.ok{background:#e6f6ec;border-left:5px solid #1f8a4c}
-.fb.no{background:#fdeaea;border-left:5px solid #d33}
-.hint{font-size:.85rem;color:#5b6474;margin:-.3rem 0 .5rem}
-
-/* sort */
-.bank{display:flex;flex-wrap:wrap;gap:.5rem;min-height:2.6rem;margin-bottom:.7rem}
-.tile{background:#fff;border:2px solid var(--p);color:var(--pd);border-radius:9px;padding:.35rem .7rem;font-weight:600;text-align:left}
-.tile.sel{background:var(--p);color:#fff}
-.tile.bad{animation:shake .35s;border-color:#d33}
-.buckets{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6rem}
-.bucket{border:2px dashed var(--p);border-radius:12px;padding:.6rem;background:var(--soft);text-align:left;min-height:6rem;color:#1d2430;display:flex;flex-direction:column;gap:.35rem}
-.bucket>b{color:var(--pd);font-size:.95rem}
-.bucket .placed{background:#fff;border-radius:7px;padding:.2rem .5rem;font-size:.88rem;border-left:4px solid var(--a)}
-.bucket.flashbad{border-color:#d33;background:#fdeaea}
-
-/* match */
-.match{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1rem}
-.match .col{display:flex;flex-direction:column;gap:.5rem}
-.mt{background:#fff;border:2px solid #d8dde6;border-radius:10px;padding:.45rem .7rem;text-align:left;color:#1d2430}
-.mt.sel{border-color:var(--p);background:var(--soft);font-weight:700}
-.mt.paired{border-color:#1f8a4c;background:#e6f6ec;cursor:default}
-.mt.bad{animation:shake .35s;border-color:#d33}
-@media (max-width:560px){.match{grid-template-columns:1fr}}
-
-/* order */
-.line{min-height:3rem;border:2px dashed var(--p);border-radius:10px;padding:.45rem;display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.6rem;background:var(--soft)}
-.line:empty::before{content:"Tap the pieces below in the right order";color:#6b7383;font-size:.9rem;padding:.2rem}
-
-/* model */
-.task{background:var(--soft);border:2px solid var(--p);border-radius:12px;padding:.8rem 1rem;margin:.6rem 0}
-.task-h{font-weight:800;color:var(--pd);margin-bottom:.2rem}
-.task p{margin:.2rem 0}
-.toggles{display:flex;gap:.5rem;flex-wrap:wrap;margin:.6rem 0}
-.tgl{border-radius:999px;border:2px solid var(--p);background:var(--p);color:#fff;padding:.2rem .9rem;font-size:.88rem;font-weight:700}
-.tgl.off{background:#fff;color:var(--pd)}
-.essay{background:#fffefb;border:1px solid #e3e6ec;border-radius:12px;padding:.4rem 1.2rem .8rem;font-size:1.05rem;line-height:1.85}
-.para{display:grid;grid-template-columns:8.5rem 1fr;gap:1rem;border-bottom:1px dashed #e3e6ec;padding:.6rem 0}
-.para:last-of-type{border-bottom:0}
-.plabel{font-size:.8rem;font-weight:700;color:var(--pd);padding-top:.35rem;border-right:4px solid var(--a);padding-right:.5rem;text-align:right;line-height:1.3}
+.row{display:flex;gap:.7rem;align-items:center;flex-wrap:wrap;margin-top:.8rem}
+.navrow{display:flex;justify-content:space-between;gap:1rem;margin-top:1.3rem}
+.qlist{display:grid;gap:.6rem;margin-top:.7rem}
+.qc{text-align:left;border:2px solid #dfe3ec;background:#fff;border-radius:12px;padding:.7rem .9rem;color:#1d2430;display:grid;gap:.25rem}
+.qc:hover{border-color:var(--p);background:var(--soft)}
+.qc.sel{border-color:var(--a);background:#fff4f0}
+.qc b{color:var(--pd)}
+.tag{justify-self:start;background:var(--soft);color:var(--pd);border-radius:999px;padding:0 .6rem;font-size:.75rem;font-weight:700}
+.qbox{background:var(--soft);border:2px solid var(--p);border-radius:12px;padding:.8rem 1rem;margin:.6rem 0}
+.qbox .h{font-weight:800;color:var(--pd);margin-bottom:.2rem;font-size:.9rem}
+.qbox p{margin:.2rem 0}
+.plan{display:grid;gap:.7rem;margin-top:.6rem}
+.plan label{display:grid;gap:.25rem;font-weight:600;color:var(--pd);font-size:.95rem}
+.plan input,.plan select,textarea{border:2px solid #cfd5e0;border-radius:10px;padding:.5rem .7rem;font-size:1rem;font-weight:400;color:#1d2430;background:#fff;width:100%}
+.plan input:focus,textarea:focus,.plan select:focus{border-color:var(--p);outline:none}
+#essay{min-height:22rem;line-height:1.75;font-size:1.05rem;resize:vertical}
+#essay[readonly]{background:#f6f7fa}
+.meters{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;margin:.7rem 0}
+.meter{border:2px solid #dfe3ec;border-radius:12px;padding:.45rem .8rem;background:#fff}
+.meter b{display:block;font-size:1.35rem;color:#6b7383;line-height:1.3}
+.meter span{font-size:.82rem;color:#5b6474}
+.meter.met{border-color:var(--ok);background:#e9f7ee}
+.meter.met b{color:var(--ok)}
+.banner{border-radius:12px;padding:.6rem .9rem;margin:.6rem 0;font-weight:600}
+.banner.bad{background:#fdeae7;border-left:5px solid var(--bad)}
+.banner.ok{background:#e9f7ee;border-left:5px solid var(--ok)}
+.banner.warn{background:#fff6e3;border-left:5px solid var(--warn)}
+.checks{display:grid;gap:.5rem;margin-top:.6rem}
+.chk{display:grid;grid-template-columns:2rem 1fr;gap:.7rem;border:1px solid #dfe3ec;border-radius:12px;padding:.55rem .8rem;background:#fff}
+.chk .ic{font-size:1.2rem;text-align:center}
+.chk.pass{border-color:var(--ok);background:#f2fbf5}
+.chk.fail{border-color:var(--bad);background:#fdf4f3}
+.chk.warnc{border-color:var(--warn);background:#fffaf0}
+.chk b{color:var(--pd)}
+.chk p{margin:.15rem 0 0;font-size:.9rem;color:#4a5262}
+.self{display:flex;flex-direction:column;gap:.4rem;background:var(--soft);border-radius:12px;padding:.8rem 1rem;margin-top:.6rem}
+.self label{display:flex;gap:.6rem;align-items:flex-start;font-size:.95rem}
+.self input{width:1.15rem;height:1.15rem;margin-top:.3rem;accent-color:var(--p)}
+.self .crit{font-weight:700;color:var(--pd);margin-top:.4rem}
+.score{display:flex;align-items:baseline;gap:1rem;margin:.4rem 0}
+.score>span{font-size:3.2rem;font-weight:800;color:var(--pd);line-height:1}
+.score b{font-size:1.1rem}
+.essayview{background:#fffdfb;border:1px solid #dfe3ec;border-radius:12px;padding:.3rem 1.1rem .7rem;font-size:1.02rem;line-height:1.85}
+.para{display:grid;grid-template-columns:9rem 1fr;gap:1rem;border-bottom:1px dashed #e3e6ec;padding:.55rem 0}
+.para:last-child{border-bottom:0}
+.plabel{font-size:.78rem;font-weight:700;color:var(--pd);padding-top:.35rem;border-right:4px solid var(--a);padding-right:.5rem;text-align:right;line-height:1.3}
 .para p{margin:0}
-@media (max-width:620px){.para{grid-template-columns:1fr;gap:.2rem}.plabel{text-align:left;border-right:0;border-left:4px solid var(--a);padding-left:.5rem}}
-.wcount{text-align:right;font-size:.85rem;color:#6b7383}
-.note{background:#fff8e6;border-left:5px solid var(--a);border-radius:0 10px 10px 0;padding:.5rem .8rem;margin:.6rem 0}
-
-/* your turn */
-.chipbox{border:1px solid #e3e6ec;border-radius:12px;padding:.7rem .9rem;margin:.8rem 0;background:#fafbfc}
-.chip-h{font-weight:700;color:var(--pd);font-size:.9rem;margin:.3rem 0}
-.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.4rem}
-.chip{border-radius:999px;border:2px solid var(--p);background:#fff;color:var(--pd);padding:.15rem .75rem;font-size:.88rem}
-.chip.lkc{border-color:#e0467c;color:#b0205a;border-style:dotted}
-.chip.used{background:#1f8a4c;border-color:#1f8a4c;color:#fff;border-style:solid}
-textarea{width:100%;min-height:14rem;border:2px solid #cfd5df;border-radius:12px;padding:.8rem;font-size:1.05rem;line-height:1.7;resize:vertical}
-textarea:focus{border-color:var(--p);outline:none}
-.meters{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem;margin:.7rem 0}
-.meter{border:2px solid #d8dde6;border-radius:12px;padding:.5rem .8rem;background:#fff}
-.meter b{display:block;font-size:1.4rem;color:#6b7383}
-.meter span{font-size:.85rem;color:#5b6474}
-.meter.met{border-color:#1f8a4c;background:#e6f6ec}
-.meter.met b{color:#1f8a4c}
-.check{display:flex;flex-direction:column;gap:.35rem;margin:.8rem 0;background:var(--soft);border-radius:12px;padding:.7rem 1rem}
-.check label{display:flex;gap:.6rem;align-items:flex-start}
-.check input{width:1.2rem;height:1.2rem;margin-top:.3rem;accent-color:var(--p)}
-.sample{margin-top:.8rem;border:2px solid var(--a);border-radius:12px;padding:.8rem 1rem;background:#fff;line-height:1.8}
-
-/* finish */
-.bigscore{display:flex;align-items:baseline;gap:1rem;margin:.4rem 0 1rem}
-.bigscore span{font-size:4rem;font-weight:800;color:var(--pd);line-height:1}
-.badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.6rem;margin:1rem 0}
-.badge{border:2px dashed #cfd5df;border-radius:12px;padding:.6rem;text-align:center;opacity:.5}
-.badge span{font-size:1.8rem;display:block}
-.badge small{display:block;color:#6b7383}
-.badge.got{opacity:1;border:2px solid var(--a);background:var(--soft)}
-.fin input{border:2px solid #cfd5df;border-radius:10px;padding:.4rem .7rem;margin:0 .5rem;min-width:14rem}
-table.wl{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:.5rem}
-table.wl td{border-bottom:1px solid #e3e6ec;padding:.35rem .4rem}
-table.wl td:last-child{direction:rtl;text-align:right;font-family:Tahoma,Arial,sans-serif}
-.navrow{display:flex;justify-content:space-between;gap:1rem;margin-top:1.4rem}
-
-/* cert, toast, confetti */
-#cert{position:fixed;inset:0;background:rgba(20,25,35,.6);z-index:50;display:grid;place-items:center;padding:1rem}
-#cert[hidden]{display:none}
-.cert-card{background:#fff;max-width:760px;width:100%;border:10px solid var(--p);outline:3px solid var(--a);outline-offset:-22px;border-radius:6px;padding:2.4rem 2rem;text-align:center}
-.cert-card h2{font-size:2.2rem;margin:.2rem 0;color:var(--pd)}
-.cert-card .who{font-size:2rem;font-weight:800;color:var(--p);border-bottom:3px solid var(--a);display:inline-block;padding:0 1rem;margin:.6rem 0}
-.cert-actions{margin-top:1.2rem;display:flex;gap:.6rem;justify-content:center}
-#toast{position:fixed;left:50%;bottom:1.2rem;transform:translateX(-50%) translateY(150%);background:var(--pd);color:#fff;padding:.6rem 1.2rem;border-radius:12px;font-weight:600;z-index:60;transition:transform .3s,opacity .3s;max-width:90vw;opacity:0;pointer-events:none}
+@media (max-width:620px){.para{grid-template-columns:1fr;gap:.2rem}.plabel{text-align:left;border-right:0;border-left:4px solid var(--a);padding-left:.5rem}.hero{grid-template-columns:1fr}}
+mark.pos{background:transparent;color:var(--pd);font-weight:700;border-bottom:3px solid var(--a)}
+.lk{border-bottom:3px dotted #2f8fb5;color:#1d6f8f;font-weight:600}
+table.cmp{width:100%;border-collapse:collapse;margin-top:.5rem;font-size:.95rem}
+table.cmp th,table.cmp td{border-bottom:1px solid #e3e6ec;padding:.4rem .5rem;text-align:left}
+table.cmp th{color:var(--pd)}
+.hist{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:.5rem}
+.hist td,.hist th{border-bottom:1px solid #e3e6ec;padding:.35rem .4rem;text-align:left}
+#toast{position:fixed;left:50%;bottom:1.2rem;transform:translateX(-50%) translateY(150%);background:var(--pd);color:#fff;padding:.6rem 1.2rem;border-radius:12px;font-weight:600;z-index:60;transition:transform .3s,opacity .3s;opacity:0;pointer-events:none;max-width:90vw}
 #toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-#confetti{position:fixed;inset:0;pointer-events:none;z-index:70;width:100%;height:100%}
-@media print{
-  body{background:#fff}
-  body.printing>*:not(#cert){display:none!important}
-  body.printing #cert{position:static;background:#fff;display:block}
-  body.printing .cert-actions{display:none}
-  .cert-card{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-}
-
+@media print{body{background:#fff}.top,#rail,.navrow,footer,.btn{display:none!important}}
 </style>
 </head>
 <body>
 <header class="top">
-  <div class="brand">
-    <span class="series">IELTS Writing Task 2: Essay Language</span>
-    <span class="ltitle">Lesson 4: Why It Happens, How to Fix It</span>
-  </div>
+  <div class="brand"><span class="series">IELTS Writing Task 2 · Exam Practice</span><span class="ltitle">Agree or Disagree</span></div>
   <div class="tools">
-    <span class="pill" id="score"></span>
-    <div class="prog" aria-label="Lesson progress"><i id="progbar"></i></div>
+    <span class="clock off" id="clock">40:00</span>
+    <button class="tbtn" data-act="pause" id="pausebtn" hidden>Pause</button>
+    <span class="pill" id="wpill">0 words</span>
     <button class="tbtn" data-act="save">Save</button>
     <button class="tbtn" data-act="load">Load</button>
     <input type="file" id="file" accept=".json,application/json" hidden>
   </div>
 </header>
-<nav id="rail" aria-label="Lesson steps"></nav>
+<nav id="rail" aria-label="Exam steps"></nav>
 <main id="main"></main>
 <footer>Designed by: Nazila Motahari</footer>
-<div id="cert" hidden></div>
 <div id="toast" role="status" aria-live="polite"></div>
-<canvas id="confetti" aria-hidden="true"></canvas>
-<script>const L={"id": "T2EL4", "num": 4, "title": "Why It Happens, How to Fix It", "arTitle": "لماذا يحدث؟ وكيف نعالجه؟", "headline": "Find the cause, then offer the fix", "subtitle": "Learn cause-and-effect language and the verbs you need to suggest solutions.", "objectives": ["use 12 words and phrases for causes, effects and solutions", "link a cause to its result with lead to, result in and due to", "suggest realistic solutions that match the causes"], "notice": {"intro": "Read the paragraph. Tap the key word in each phrase that shows a cause or a result.", "ar": "اقرأ الفقرة. اضغط على الكلمة الأساسية في كل عبارة تدلّ على سبب أو نتيجة.", "lines": ["Many young people do not get enough exercise. One main factor is screen time, because teenagers spend hours on their phones.", "This can lead to weight gain, and as a result, some develop health problems due to their inactive lifestyle."], "targets": ["factor", "because", "lead", "result", "due"], "note": "Cause language explains [[why]] something happens (factor, because, due to). Result language explains [[what happens next]] (lead to, as a result). You will need both in a problem/solution essay."}, "words": [{"w": "lead to", "pos": "verb phrase", "ar": "يؤدّي إلى", "def": "to cause something to happen", "ex": "Heavy traffic can [[lead to]] stress and long delays.", "forms": ["lead to", "leads to", "led to", "leading to"]}, {"w": "result in", "pos": "verb phrase", "ar": "ينتج عنه", "def": "to cause a particular result", "ex": "A poor diet can [[result in]] serious health problems.", "forms": ["result in", "results in", "resulted in", "resulting in"]}, {"w": "due to", "pos": "preposition", "ar": "بسبب", "def": "because of", "ex": "Many flights were cancelled [[due to]] bad weather.", "forms": ["due to"]}, {"w": "factor", "pos": "noun", "ar": "عامل", "def": "one of the things that causes a situation", "ex": "Cost is an important [[factor]] when students choose a university.", "forms": ["factor", "factors"]}, {"w": "consequence", "pos": "noun", "ar": "عاقبة / نتيجة", "def": "a result of an action, often a bad one", "ex": "Obesity is one [[consequence]] of an inactive lifestyle.", "forms": ["consequence", "consequences"]}, {"w": "tackle", "pos": "verb", "ar": "يتصدّى لـ / يعالج", "def": "to try hard to deal with a difficult problem", "ex": "Governments must [[tackle]] air pollution urgently.", "forms": ["tackle", "tackles", "tackled", "tackling"]}, {"w": "address", "pos": "verb", "ar": "يعالج (مشكلة)", "def": "to start dealing with a problem", "ex": "Schools need to [[address]] the problem of bullying.", "forms": ["address", "addresses", "addressed", "addressing"]}, {"w": "reduce", "pos": "verb", "ar": "يقلّل", "def": "to make something smaller or less", "ex": "Car sharing can [[reduce]] the number of vehicles on the road.", "forms": ["reduce", "reduces", "reduced", "reducing"]}, {"w": "introduce", "pos": "verb", "ar": "يطبّق / يستحدث", "def": "to start using a new law, rule or system", "ex": "The city [[introduced]] a new bus lane last year.", "forms": ["introduce", "introduces", "introduced", "introducing"]}, {"w": "invest in", "pos": "verb phrase", "ar": "يستثمر في", "def": "to spend money on something to make it better", "ex": "The government should [[invest in]] public transport.", "forms": ["invest in", "invests in", "invested in", "investing in"]}, {"w": "raise awareness", "pos": "verb phrase", "ar": "يرفع الوعي", "def": "to help people understand a problem", "ex": "Campaigns can [[raise awareness]] of healthy eating.", "forms": ["raise awareness", "raises awareness", "raised awareness", "raising awareness"]}, {"w": "encourage", "pos": "verb", "ar": "يشجّع", "def": "to make someone more likely to do something", "ex": "Lower fares would [[encourage]] people to use buses.", "forms": ["encourage", "encourages", "encouraged", "encouraging"]}], "practiceLead": "Use the new words in IELTS-style sentences. Your first answer counts.", "practiceAr": "استخدم الكلمات الجديدة في جمل بأسلوب الآيلتس. إجابتك الأولى هي التي تُحتسب.", "practice": [{"type": "sort", "q": "Is it cause/result language or a solution verb?", "buckets": ["Cause and result", "Solution"], "items": [{"t": "lead to", "b": 0}, {"t": "tackle", "b": 1}, {"t": "due to", "b": 0}, {"t": "invest in", "b": 1}, {"t": "result in", "b": 0}, {"t": "raise awareness", "b": 1}, {"t": "consequence", "b": 0}, {"t": "introduce", "b": 1}], "why": ""}, {"type": "mc", "q": "Long working hours can ___ health problems.", "options": ["lead to", "due to", "invest in", "tackle"], "a": 0, "why": "X can [[lead to]] Y = X causes Y."}, {"type": "mc", "q": "The match was cancelled ___ the heavy rain.", "options": ["due to", "lead to", "result in", "because"], "a": 0, "why": "[[Due to]] + noun. 'Because' needs a full clause: because it rained heavily."}, {"type": "mc", "q": "The government should ___ better public transport.", "options": ["invest in", "result in", "due to", "lead to"], "a": 0, "why": "[[Invest in]] = spend money to improve something. It is a solution."}, {"type": "match", "q": "Match each problem with the solution that fits it best.", "pairs": [["Traffic congestion", "Improve public transport"], ["Childhood obesity", "Provide healthy school meals"], ["Plastic waste", "Charge for plastic bags"], ["Youth unemployment", "Offer job training programmes"], ["Low reading levels", "Open more school libraries"]], "why": "A good solution always matches its problem."}, {"type": "mc", "q": "A lack of sleep is one ___ that affects students' concentration.", "options": ["factor", "solution", "measure", "address"], "a": 0, "why": "A [[factor]] is one of the causes of a situation."}, {"type": "mc", "q": "The city launched a campaign to ___ of the dangers of speeding.", "options": ["raise awareness", "reduce", "introduce", "result in"], "a": 0, "why": "[[Raise awareness]] of + a problem."}, {"type": "mc", "q": "Which sentence suggests a solution?", "options": ["Schools should offer more sports clubs to encourage students to exercise.", "Many students do not exercise enough.", "This leads to health problems.", "One factor is the hot summer weather."], "a": 0, "why": "Solutions usually use should or could + an action verb."}, {"type": "mc", "q": "Higher fuel prices might ___ people to share cars.", "options": ["encourage", "reduce", "lead", "address"], "a": 0, "why": "[[Encourage]] someone to do something."}, {"type": "mc", "q": "Which sentence shows the cause and the result in the right order?", "options": ["Pollution results in breathing problems.", "Pollution results breathing problems.", "Pollution is result in breathing problems.", "Breathing problems result in pollution."], "a": 0, "why": "Cause + [[results in]] + effect. Pollution is the cause, so it comes first. The last option reverses them."}], "upgradeLead": "A Band 5 answer says 'because' and 'must do something'. A Band 6.5 answer names the cause precisely and gives a specific solution.", "upgradeAr": "إجابة المستوى 5 تكتفي بـ 'لأن' و'يجب فعل شيء'. إجابة المستوى 6.5 تحدّد السبب بدقة وتقدّم حلًا محددًا.", "upgrade": [{"type": "mc", "q": "Band 5: 'People are fat because fast food.' Which is the best upgrade?", "options": ["One major factor in rising obesity is the popularity of fast food, which is high in fat and sugar.", "People fat because they eat fast food a lot a lot.", "Fast food is because people are fat.", "Obesity leads to fast food."], "a": 0, "why": "One major [[factor]] in + problem + is + cause."}, {"type": "mc", "q": "Band 5: 'The government must do something.' Which is the best upgrade?", "options": ["The government should introduce stricter rules and invest in public awareness campaigns.", "The government must do something about something.", "Government do something now!", "Something should be done by someone."], "a": 0, "why": "Name the exact action: [[introduce]] rules, [[invest in]] campaigns."}, {"type": "order", "q": "Build a cause-and-effect sentence.", "tiles": ["Heavy traffic", "in city centres", "often leads to", "air pollution", "and", "stressed drivers."], "why": "Cause + [[leads to]] + effects."}, {"type": "order", "q": "Build a solution sentence.", "tiles": ["To tackle", "this problem,", "the authorities", "could introduce", "free buses", "for students."], "why": "To [[tackle]] this problem, + who + could/should + action."}, {"type": "mc", "q": "Cause: 'Many people drive because buses are slow and unreliable.' Which solution matches this cause best?", "options": ["Invest in faster, more frequent bus services.", "Build more car parks in the city centre.", "Make petrol cheaper.", "Raise awareness of healthy eating."], "a": 0, "why": "If slow buses are the cause, better buses are the matching solution."}], "model": {"question": "Traffic congestion is becoming a serious problem in many large cities. What are the main causes of this problem, and what solutions can you suggest?", "ar": "أصبح الازدحام المروري مشكلة خطيرة في كثير من المدن الكبرى. ما أسبابه الرئيسية، وما الحلول التي تقترحها؟", "note": "This is a causes + solutions question. Body 1 explains the causes and Body 2 gives solutions. Notice that each solution matches one of the causes.", "paras": [{"label": "Introduction", "text": "In many large cities around the world, roads are becoming increasingly crowded, especially in the morning and evening. This essay will explain the main causes of this problem and suggest some practical ways to [[tackle]] it."}, {"label": "Body 1: causes", "text": "There are two main [[factors]] behind traffic congestion. ((Firstly)), the number of private cars has grown rapidly, ((because)) more families can now afford them. ((Secondly)), public transport in some cities is slow and unreliable. ((For example)), a bus journey can sometimes take twice as long as the same trip by car. ((As a result)), people prefer to drive, even for short trips. This [[leads to]] long queues at rush hour, when thousands of employees travel at the same time, and [[due to]] these delays, many employees arrive at work late and stressed."}, {"label": "Body 2: solutions", "text": "((However)), there are several ways to [[address]] this problem. ((One solution is)) to [[invest in]] fast, frequent metro and bus services, which would [[encourage]] people to leave their cars at home. ((In addition)), companies could [[introduce]] flexible working hours or allow staff to work from home one or two days a week, ((so that)) fewer employees travel at the same time. ((Finally)), the government could [[raise awareness]] of car sharing through advertising campaigns. These steps would [[reduce]] the number of vehicles on the road."}, {"label": "Conclusion", "text": "((In conclusion)), traffic congestion is mainly caused by the rising number of cars and poor public transport. ((Therefore)), governments and employers must work together, ((because)) better transport and flexible working could [[result in]] quieter roads and cleaner air. ((Although)) these changes will take time and money, they are essential if cities want to remain pleasant places to live and work."}], "checks": [{"type": "mc", "q": "What does Body paragraph 1 describe?", "options": ["The causes of the problem", "The solutions", "The writer's opinion", "The advantages of cars"], "a": 0, "why": "Body 1 = causes; Body 2 = solutions."}, {"type": "mc", "q": "Which solution matches the cause 'public transport is slow and unreliable'?", "options": ["Invest in fast, frequent metro and bus services", "Flexible working hours", "Advertising campaigns about car sharing", "Building more roads"], "a": 0, "why": "Slow transport → faster, more frequent transport."}, {"type": "mc", "q": "What does 'due to' mean in Body paragraph 1?", "options": ["because of", "in order to", "instead of", "as well as"], "a": 0, "why": "[[Due to]] these delays = because of these delays."}]}, "yourturn": {"task": "Question: 'Many young people in cities do not get enough exercise. What are the causes, and what can be done to solve this problem?' Write one paragraph with one cause, its result, and a solution that matches the cause.", "ar": "اكتب فقرة واحدة تتضمّن سببًا واحدًا ونتيجته وحلًا يناسب هذا السبب.", "min": 60, "useWords": 4, "useLinks": 2, "links": ["because", "as a result", "therefore", "one solution is", "in addition", "so that"], "checklist": ["I explained one cause clearly", "I showed its result", "My solution matches the cause", "I used should or could for the solution"], "sample": "One important [[factor]] is the hot weather, ((because)) it makes outdoor sport difficult for much of the year. ((As a result)), many teenagers stay indoors, which can [[lead to]] weight gain. ((One solution is)) for local councils to [[invest in]] indoor sports centres with low fees. ((In addition)), schools could [[introduce]] daily PE lessons to [[encourage]] students to be more active."}, "next": "Lesson 5: Prove It (explaining, examples and topic collocations)"};</script>
 <script>
-(function(){
-"use strict";
+const QS=[
+{id:"q1",topic:"Education",
+ q:"Some universities require students to attend every class, and those who miss lessons cannot sit the final exam. To what extent do you agree or disagree with this rule?",
+ keywords:["attend","attendance","class","classes","lesson","lessons","university","students","exam"],
+ plan:{pos:"Partly agree",
+  i1:"Attendance protects weaker students, who learn most from live explanation and practice.",
+  e1:"A student who misses grammar classes cannot catch up from slides alone.",
+  i2:"A total ban from the exam is too harsh, because some absences are unavoidable.",
+  e2:"A student in hospital for a week should be allowed to take the exam.",
+  con:"Keep a minimum attendance rule, but allow exceptions for serious reasons."},
+ paras:[
+  {label:"Introduction",text:"Some people believe that students should be free to decide when to attend their classes, ((while)) others argue that lessons must be compulsory and that absent students should lose the right to sit the examination. [[In my opinion]], attendance rules are necessary, ((but)) this particular punishment is too severe. In this essay I will discuss both views and give the reasons for my position."},
+  {label:"Body 1: the view that the rule is fair",text:"((Firstly)), regular attendance clearly improves learning. Most courses are built around explanation, discussion and practice, ((so)) a student who reads the slides at home receives only part of the lesson. ((For example)), in a writing class, learners get feedback on their own paragraphs, which no recording can replace. ((In addition)), weaker students benefit the most from being in the room, ((because)) they can ask questions immediately. ((Furthermore)), courses that include group work depend on students being present: if half the class is missing, the remaining learners are left without partners. [[For this reason, I believe]] universities are right to set a minimum level of attendance."},
+  {label:"Body 2: my own view",text:"((On the other hand)), many students and parents argue that banning a learner from the examination is an extreme measure. Some absences are completely outside the student's control, ((such as)) illness, family emergencies or hospital appointments. ((As a result)), a hard-working learner could lose an entire semester for reasons that are not their fault. [[It could also be argued that]] the university already has fairer tools, ((for instance)) lower participation marks or compulsory extra tasks for missed lessons."},
+  {label:"Conclusion",text:"((In conclusion)), [[while I agree that]] students should be required to attend most of their classes, [[I do not believe]] that missing a few lessons should prevent them from sitting the exam. ((Instead)), universities should set a clear attendance percentage and accept documented reasons for absence."}],
+ why:[
+  "The introduction gives both views, then the writer's own opinion, then what the essay will do.",
+  "Body 1 explains the view the writer does not fully share; Body 2 gives the writer's own view.",
+  "Every idea has a reason and an example, not just a claim.",
+  "The conclusion repeats the position in new words and adds no new idea."]},
+{id:"q2",topic:"Technology",
+ q:"Some people believe that mobile phones should be banned in secondary schools. To what extent do you agree or disagree?",
+ keywords:["mobile","phone","phones","school","schools","students","ban","banned","classroom"],
+ plan:{pos:"Partly agree",
+  i1:"Phones distract students and harm concentration during lessons.",
+  e1:"Notifications interrupt a task every few minutes.",
+  i2:"Phones are useful learning tools and a safety link to parents.",
+  e2:"Students can look up words or contact family after school.",
+  con:"Ban phones during lessons, not on school grounds."},
+ paras:[
+  {label:"Introduction",text:"Some people think that mobile phones have no place in secondary schools, ((while)) others believe that they are a useful part of modern learning. [[In my view]], phones should be switched off during lessons, ((but)) [[I do not believe]] that a complete ban on school grounds is necessary. This essay will consider both views before explaining my position."},
+  {label:"Body 1: the view that phones should be banned",text:"((Firstly)), phones damage concentration. Teenagers receive messages and notifications every few minutes, ((so)) their attention is constantly interrupted. ((As a result)), they lose the thread of the lesson and their academic performance suffers. ((Moreover)), phones can be used to cheat in tests and to record classmates without permission, ((which leads to)) serious problems with privacy and bullying. ((For this reason)), most teachers support collecting phones at the start of a lesson. ((Furthermore)), schools that collect phones at the door often report calmer classrooms and better test results."},
+  {label:"Body 2: the other view, and my position",text:"((On the other hand)), phones also have clear benefits. They are useful learning tools, ((for example)) for checking the meaning of new words, scanning a text with a camera or joining an online quiz. ((For instance)), a class can check an unfamiliar word in seconds, which would otherwise interrupt the whole lesson. ((In addition)), parents want to reach their children after school, ((particularly)) when transport is delayed. [[It could be argued that]] removing phones completely simply moves the problem: students who never learn to control their phone use at school will struggle at university."},
+  {label:"Conclusion",text:"((In conclusion)), [[I strongly believe that]] phones should be switched off and put away during lessons, ((but)) [[I disagree with]] banning them from the school entirely. ((Overall)), clear rules and lessons about responsible use are more effective than a total ban."}],
+ why:[
+  "Both views are in the introduction: phones have no place at school, or phones are a useful tool.",
+  "Body 1 gives the arguments for a ban; Body 2 gives the arguments against it and the writer's position.",
+  "The position is precise (banned in lessons, not on school grounds) and it never changes.",
+  "Topic collocations are used naturally: academic performance, learning tools, responsible use."]},
+{id:"q3",topic:"Work and study",
+ q:"Many people say that young adults should work for a few years before they start university. To what extent do you agree or disagree?",
+ keywords:["work","working","university","students","young","adults","job","degree","study"],
+ plan:{pos:"Agree",
+  i1:"Work experience helps students choose the right subject.",
+  e1:"Someone who works in a clinic learns whether nursing suits them.",
+  i2:"Working first builds maturity, money management and confidence.",
+  e2:"Paying for their own course makes students take it seriously.",
+  con:"A gap of one or two years is valuable, as long as it is planned."},
+ paras:[
+  {label:"Introduction",text:"Some people argue that school leavers should begin their degree immediately, ((while)) others believe that a few years of employment first is far more valuable. [[In my opinion]], a short period of work benefits most young adults, ((because)) it helps them choose the right course and prepares them for the demands of study. This essay will discuss both views and explain my reasons."},
+  {label:"Body 1: why work experience helps",text:"((Firstly)), many eighteen-year-olds choose a degree without knowing what the job involves. ((As a result)), a large number of students change subject or leave university altogether, ((which)) wastes both their time and public money. ((For example)), a young person who works as an assistant in a clinic quickly discovers whether they are suited to nursing. ((Therefore)), a short period of work can prevent an expensive mistake. ((Furthermore)), universities themselves benefit, ((since)) classes filled with motivated students are easier to teach."},
+  {label:"Body 2: the opposite view, and my answer to it",text:"((On the other hand)), some people argue that young people should start their degree without delay. ((They point out that)) students who stop studying may lose the habit of academic work, and that a late start delays graduation and a professional salary. [[However, I am convinced that]] these disadvantages are small. A gap of one or two years is short, ((whereas)) employment teaches skills that school does not: young workers learn to manage their time, deal with difficult customers and live on a budget. ((For example)), a graduate who has worked in a shop already knows how to speak to strangers politely and deal with complaints."},
+  {label:"Conclusion",text:"((In conclusion)), [[I believe that]] a short period of work before university benefits most young adults. ((Although)) it delays graduation slightly, the gain in maturity and in the quality of their choices is, [[in my view]], far more valuable."}],
+ why:[
+  "The introduction names both views, gives the opinion, and says what the essay will do.",
+  "Body 2 reports the opposite view fairly, then answers it with \"However, I am convinced that…\".",
+  "Each body paragraph develops one idea with an explanation and an example.",
+  "The conclusion accepts one small cost and then confirms the writer's view."]},
+{id:"q4",topic:"Health",
+ q:"Some people think that every school should make one hour of sport compulsory each day. To what extent do you agree or disagree?",
+ keywords:["sport","exercise","school","schools","students","health","daily","hour","physical"],
+ plan:{pos:"Agree with one condition",
+  i1:"Daily exercise protects young people from a sedentary lifestyle.",
+  e1:"Teenagers who sit all day gain weight and sleep badly.",
+  i2:"Exercise improves mood, concentration and results in class.",
+  e2:"A short session before study helps students focus.",
+  con:"Make it compulsory, but let students choose the activity."},
+ paras:[
+  {label:"Introduction",text:"Some people believe that schools should concentrate on academic subjects, ((while)) others argue that an hour of physical activity should be compulsory every day. [[In my view]], daily sport should be part of every school day, ((provided that)) students are allowed to choose the type of exercise. This essay will examine both views and give the reasons for my opinion."},
+  {label:"Body 1: why daily sport is needed",text:"((Firstly)), young people today spend most of their time sitting, ((either)) in class ((or)) in front of a screen. ((As a result)), a sedentary lifestyle has become normal, ((which leads to)) weight gain, poor sleep and long-term health problems. ((For example)), doctors in many countries report rising rates of diabetes among teenagers. ((Therefore)), an hour of daily exercise at school would reach every child, ((including)) those whose families cannot afford a sports club. ((Furthermore)), habits formed at school tend to last: a teenager who enjoys daily exercise is far more likely to stay active as an adult."},
+  {label:"Body 2: the opposite view, and my answer to it",text:"((On the other hand)), some people argue that an hour of sport every day takes valuable time away from academic subjects, ((particularly)) in examination years. ((They also claim that)) exercise is the responsibility of families rather than schools. [[However, I am convinced that]] these objections are weak. Physical activity reduces stress and raises energy levels, ((so)) students return to class far more able to concentrate; ((in other words)), they learn more in four focused lessons than in five lessons they are too tired to follow. ((Moreover)), many families have neither the time nor the money for sports clubs, ((so)) school is the only place where every child can exercise safely."},
+  {label:"Conclusion",text:"((In conclusion)), [[I strongly support]] making daily sport compulsory in schools, ((because)) it protects students' health and helps them study more effectively. ((Nevertheless)), schools should offer a range of activities, ((so that)) every student finds one they enjoy."}],
+ why:[
+  "Both views appear in the introduction, followed by an opinion with one clear condition.",
+  "Body 2 states the objection in the other side's own words before answering it.",
+  "Examples and topic collocations (a sedentary lifestyle, academic performance) support both paragraphs.",
+  "The conclusion returns to the condition given in the introduction."]},
+{id:"q5",topic:"City life",
+ q:"Some people believe that private cars should be banned from city centres. To what extent do you agree or disagree?",
+ keywords:["cars","car","city","centre","centres","traffic","transport","pollution","drivers"],
+ plan:{pos:"Partly agree",
+  i1:"Fewer cars means cleaner air and safer, quieter streets.",
+  e1:"Cities with car-free centres report lower pollution levels.",
+  i2:"A ban is unfair unless public transport is good enough first.",
+  e2:"Elderly people and families with young children need door-to-door travel.",
+  con:"Restrict cars gradually, after investing in public transport."},
+ paras:[
+  {label:"Introduction",text:"Some people believe that city centres would be far healthier without private vehicles, ((while)) others argue that such a ban would be unfair to residents. [[In my opinion]], cars should eventually be restricted, ((but)) only ((once)) public transport is genuinely reliable. In this essay I will discuss both views and give reasons for my position."},
+  {label:"Body 1: the view that cars should be banned",text:"((Firstly)), removing cars from the centre would improve air quality. Traffic is responsible for a large share of carbon emissions in urban areas, ((so)) fewer vehicles would mean cleaner air and fewer breathing problems. ((In addition)), pedestrian streets are safer and more pleasant, ((which)) encourages people to walk and to spend time in shops and cafés. ((For example)), several European cities have reported both lower pollution and higher sales after closing their centres to traffic. ((Moreover)), delivery vehicles and taxis could still be permitted, ((so)) shops in the centre would not lose their supplies."},
+  {label:"Body 2: the other view, and my position",text:"((On the other hand)), some residents argue that a ban would create serious difficulties for them. Elderly people, families with small children and workers who carry equipment cannot easily use a bus, ((particularly)) in a hot climate. ((Furthermore)), if the metro is crowded and the buses are slow, a ban simply punishes people who have no alternative. ((For example)), a nurse finishing a night shift at two in the morning cannot rely on a bus that runs once an hour. [[In my view]], governments should ((therefore)) [[first]] invest in frequent, air-conditioned public transport and ((only then)) restrict private vehicles."},
+  {label:"Conclusion",text:"((In conclusion)), [[I agree that]] city centres would be healthier without private cars, ((but)) [[I do not believe]] such a ban should be introduced immediately. ((Instead)), cities should improve public transport first and reduce traffic step by step."}],
+ why:[
+  "The introduction gives both views, the writer's opinion and the plan of the essay.",
+  "Body 1 argues for the ban; Body 2 gives the other side and the writer's condition.",
+  "Specific examples and topic collocations (carbon emissions, public transport) raise the vocabulary score.",
+  "The conclusion gives a practical order of steps instead of repeating the same words."]}
+];
+
+/* ---------- helpers ---------- */
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const mark=s=>esc(s).replace(/\[\[(.+?)\]\]/g,'<mark class="lw">$1</mark>').replace(/\(\((.+?)\)\)/g,'<span class="lk">$1</span>');
+const mk=s=>esc(s).replace(/\[\[(.+?)\]\]/g,'<mark class="pos">$1</mark>').replace(/\(\((.+?)\)\)/g,'<span class="lk">$1</span>');
 const plain=s=>String(s).replace(/\[\[|\]\]|\(\(|\)\)/g,"");
-const STEPS=[["notice","Notice","لاحظ","👀"],["words","Words","الكلمات","🃏"],["practice","Practice","تدرّب","✏️"],["upgrade","Upgrade it","طوِّر الجملة","🚀"],["model","Model answer","الإجابة النموذجية","📄"],["yourturn","Your turn","دورك","🖊️"],["finish","Finish","النهاية","🏆"]];
-const BADGES={notice:"Sharp eyes",words:"Word explorer",practice:"Practice pro",upgrade:"Band booster",model:"Essay reader",yourturn:"Writer",finish:"Lesson champion"};
-
-const ITEMS={};
-L.practice.forEach((it,i)=>ITEMS["p"+i]=it);
-L.upgrade.forEach((it,i)=>ITEMS["u"+i]=it);
-L.model.checks.forEach((it,i)=>ITEMS["m"+i]=it);
-const SCORED=Object.keys(ITEMS), MAX=SCORED.length*10;
-
-function fresh(){return {lesson:L.id,name:"",step:"notice",done:{},res:{},found:[],revealed:false,seen:[],text:"",cl:{},sample:false};}
-let S=fresh(), cur="notice", hideLw=false, hideLk=false;
-
-/* notice tokens */
-const TOK=[];
-L.notice.lines.forEach((line,li)=>line.split(/\s+/).forEach(t=>TOK.push({t,li,c:t.toLowerCase().replace(/[^a-z'’-]/g,"")})));
-const TG=new Set(L.notice.targets);
-const TGI=TOK.map((o,i)=>TG.has(o.c)?i:-1).filter(i=>i>=0);
-
-/* your-turn detection */
-function formsOf(w){if(w.forms)return w.forms;const b=w.w.toLowerCase();const f=[b,b+"s",b+"es",b+"ed",b+"d",b+"ing"];if(b.endsWith("e"))f.push(b.slice(0,-1)+"ing");return f;}
-function rx(forms){return new RegExp("(^|[^a-z])("+forms.map(f=>f.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,"\\$&").replace(/\s+/g,"[\\s,]+")).join("|")+")(?![a-z])","i");}
-const WRX=L.words.map(w=>rx(formsOf(w)));
-const LRX=L.yourturn.links.map(l=>rx([l]));
-const wc=()=>{const t=S.text.trim();return t?t.split(/\s+/).length:0;};
-const usedW=()=>WRX.map(r=>r.test(S.text));
-const usedL=()=>LRX.map(r=>r.test(S.text));
-
-function shuf(n){const a=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
-function st(k){
-  if(!S.res[k]){
-    const it=ITEMS[k], r={done:false,pts:0};
-    if(it.type==="mc"){r.perm=shuf(it.options.length);r.tried=[];}
-    if(it.type==="sort"){r.perm=shuf(it.items.length);r.placed={};r.bad=[];}
-    if(it.type==="match"){r.lp=shuf(it.pairs.length);r.rp=shuf(it.pairs.length);r.m={};r.bad=[];}
-    if(it.type==="order"){let p;do{p=shuf(it.tiles.length);}while(p.every((v,i)=>it.tiles[v]===it.tiles[i]));r.perm=p;r.ans=[];r.checks=0;r.wrong=false;}
-    S.res[k]=r;
-  }
-  return S.res[k];
+const TOTAL=40*60;
+const STEPS=[["brief","Exam brief","التعليمات","📋"],["question","Question","السؤال","❓"],["plan","Plan","التخطيط","🗺️"],["write","Write","الكتابة","✍️"],["check","Check","المراجعة","🔍"],["model","Model answer","الإجابة النموذجية","📄"],["result","Result","النتيجة","🏁"]];
+const LINKERS=["firstly","secondly","finally","in addition","moreover","furthermore","however","on the other hand","nevertheless","whereas","while","although","because","since","due to","as a result","therefore","consequently","which leads to","so that","for example","for instance","such as","in other words","this means that","in my view","in my opinion","in conclusion","to sum up","overall","on balance","in contrast","despite","even though","also","so","first of all","another reason","for this reason","that is why","besides","apart from","at the same time","not only","by contrast","instead"];
+const POS=/(i (strongly |completely |totally |largely |partly |firmly )?(agree|disagree|believe|think|feel|support|oppose)|in my (view|opinion)|i am convinced|from my point of view|i do not believe|this essay will argue)/i;
+const CONC=/\b(in conclusion|to conclude|to sum up|in summary|overall|on balance)\b/i;
+const EXAMPLE=/\b(for example|for instance|such as|to illustrate)\b/i;
+const OTHERS=/\b(some people|many people|some argue|some believe|others|it is (often|sometimes) (said|argued|claimed|suggested)|opponents|critics|supporters)\b/i;
+const CONTRAST=/\b(while|whereas|however|on the other hand|although|but|in contrast)\b/i;
+const OTHERVIEW=/(on the other hand|others (believe|argue|think|say|point out)|some people (believe|argue|think|say|point out)|it could be argued|opponents|critics|those who (oppose|support)|they (point out|also claim|argue))/i;
+const CONTRACT=/\b(don't|doesn't|didn't|can't|won't|isn't|aren't|it's|i'm|they're|we're|shouldn't|couldn't|wouldn't|hasn't|haven't)\b/i;
+const INFORMAL=[["a lot of","a large number of / a great deal of"],["kids","children / young people"],["stuff","items / materials"],["big problem","serious problem"],["nowadays everybody","in recent years, many people"],["and so on","and similar examples"],["i wanna","I would like to"],["gonna","going to"]];
+const STOP=new Set("the a an and or but of to in on for with that this these those is are was were be been being it its as at by from they them their there here we you i he she his her our your not no do does did have has had will would can could should may might more most some any all very also than then so such which who what when where how about into over under between during because if while although however therefore".split(" "));
+/* ---------- state ---------- */
+function fresh(){return{v:1,qid:null,started:false,elapsed:0,running:false,timeUp:false,untimed:false,extra:0,plan:{va:"",vb:"",pos:"",i1:"",e1:"",i2:"",e2:"",con:""},text:"",submitted:false,self:{},step:"brief",done:{},finishedAt:null};}
+let S=fresh(),cur="brief",tick=null,hist=[];
+const KEY="t2-exam-agree-v1",HKEY="t2-exam-agree-history";
+function Q(){return QS.find(q=>q.id===S.qid);}
+function limit(){return TOTAL+S.extra;}
+function left(){return Math.max(0,limit()-S.elapsed);}
+const mmss=s=>String(Math.floor(s/60)).padStart(2,"0")+":"+String(Math.floor(s%60)).padStart(2,"0");
+/* ---------- analysis ---------- */
+function paras(t){return t.split(/\n\s*\n|\n/).map(x=>x.trim()).filter(x=>x.split(/\s+/).length>4);}
+function words(t){t=t.trim();return t?t.split(/\s+/).length:0;}
+function sentences(t){return t.split(/[.!?]+/).map(x=>x.trim()).filter(x=>x.split(/\s+/).length>2);}
+function foundLinkers(t){const l=t.toLowerCase();return LINKERS.filter(x=>new RegExp("(^|[^a-z])"+x.replace(/\s+/g,"\\s+")+"(?![a-z])","i").test(l));}
+function topWord(t,skip){const S2=new Set((skip||[]).map(x=>x.toLowerCase()));const c={};t.toLowerCase().replace(/[^a-z\s']/g," ").split(/\s+/).forEach(w=>{if(w.length>3&&!STOP.has(w)&&!S2.has(w))c[w]=(c[w]||0)+1;});
+  let b=["",0];Object.keys(c).forEach(w=>{if(c[w]>b[1])b=[w,c[w]];});return b;}
+function analyse(){
+  const t=S.text,P=paras(t),n=words(t),S2=sentences(t),lk=foundLinkers(t),q=Q();
+  const first=P[0]||"",last=P[P.length-1]||"";
+  const longest=S2.reduce((m,s)=>Math.max(m,words(s)),0);
+  const avg=S2.length?Math.round(n/S2.length):0;
+  const kw=q?q.keywords.filter(k=>new RegExp("\\b"+k+"\\b","i").test(t)).length:0;
+  const inf=INFORMAL.filter(p=>new RegExp("\\b"+p[0].replace(/\s+/g,"\\s+")+"\\b","i").test(t));
+  const rep=topWord(t,q?q.keywords:[]);
+  const C=[];
+  const add=(st,title,note)=>C.push({st,title,note});
+  add(n>=250?"pass":"fail","Length: "+n+" words",n>=250?"You are above the 250-word minimum.":"Under 250 words loses marks automatically. Aim for 260 to 280.");
+  add(P.length>=4?"pass":P.length===3?"warnc":"fail","Paragraphs: "+P.length,P.length>=4?"Introduction, two body paragraphs and a conclusion.":"Task 2 needs four clear paragraphs. Leave an empty line between them.");
+  add(POS.test(first)?"pass":"fail","Position in the introduction",POS.test(first)?"Your opinion is clear from the start.":"The examiner must see your position in the introduction. Use 'I completely agree that…', 'In my view…' or 'I partly agree…'.");
+  add(CONC.test(last)&&POS.test(last)?"pass":CONC.test(last)?"warnc":"fail","Position in the conclusion",CONC.test(last)&&POS.test(last)?"Your conclusion signals the ending and repeats your position.":CONC.test(last)?"Your conclusion starts well, but it does not repeat your opinion.":"End with 'In conclusion,' and your position in new words.");
+  add(OTHERS.test(first)&&CONTRAST.test(first)?"pass":"fail","Both views in the introduction",OTHERS.test(first)&&CONTRAST.test(first)?"You gave the two sides before your own opinion.":"Open with both sides: 'Some people believe that…, while others argue that…'. Then give your opinion.");
+  const bodies=P.slice(1,-1), twoSides=OTHERVIEW.test(bodies.join(" "))||bodies.some(x=>/^however\b/i.test(x));
+  add(twoSides?"pass":"fail","Both sides in the body",twoSides?"One body paragraph presents the other side.":"One body paragraph must explain the view you do not hold: 'On the other hand, some people argue that…'. Then answer it.");
+  add(lk.length>=6?"pass":lk.length>=4?"warnc":"fail","Linking words: "+lk.length+" different","Found: "+(lk.slice(0,12).join(", ")||"none")+". Aim for six or more, spread across the essay.");
+  add(EXAMPLE.test(t)?"pass":"fail","Examples",EXAMPLE.test(t)?"You introduced at least one example. Check that every main idea has one.":"Support each main idea with 'For example,' or 'such as'. Examples raise your Task Response score.");
+  add(kw>=3?"pass":"warnc","Topic vocabulary: "+kw+" key words",kw>=3?"You stayed on the topic of the question.":"Your answer drifts from the question. Use its key ideas, in your own words.");
+  add(!CONTRACT.test(t)?"pass":"warnc","Academic register",!CONTRACT.test(t)?"No contractions found.":"Contractions such as don't and it's are too informal. Write do not, it is.");
+  add(inf.length===0?"pass":"warnc","Informal words",inf.length?inf.map(p=>p[0]+" → "+p[1]).join("; "):"No informal expressions found.");
+  add(longest<=40?"pass":"warnc","Longest sentence: "+longest+" words",longest<=40?"Sentence length looks controlled. Average: "+avg+" words.":"Very long sentences lose marks for grammar. Split anything over 40 words.");
+  add(rep[1]<=6?"pass":"warnc","Repeated word: "+(rep[0]||"none")+(rep[1]?" ("+rep[1]+"×)":""),rep[1]<=6?"Good variety of vocabulary. Words from the question itself are not counted here.":"Find synonyms for '"+rep[0]+"' so the examiner sees a wider range.");
+  const pass=C.filter(c=>c.st==="pass").length;
+  return {C,pass,total:C.length,n,P,lk,S2,avg,longest};
 }
-const score=()=>SCORED.reduce((t,k)=>t+(S.res[k]&&S.res[k].done?S.res[k].pts:0),0);
-const pct=()=>Math.round(100*score()/MAX);
-
-function stepDone(id){
-  const Y=L.yourturn;
-  switch(id){
-    case "notice": return S.revealed||TGI.every(i=>S.found.includes(i));
-    case "words": return L.words.every((_,i)=>S.seen.includes(i));
-    case "practice": return L.practice.every((_,i)=>S.res["p"+i]&&S.res["p"+i].done);
-    case "upgrade": return L.upgrade.every((_,i)=>S.res["u"+i]&&S.res["u"+i].done);
-    case "model": return L.model.checks.every((_,i)=>S.res["m"+i]&&S.res["m"+i].done);
-    case "yourturn": return wc()>=Y.min&&usedW().filter(Boolean).length>=Y.useWords&&usedL().filter(Boolean).length>=Y.useLinks;
-    case "finish": return !!S.done.finish;
-  }
+const SELF=[["Task response",["I answered the exact question and kept one clear position.","I explained both sides, not only the side I agree with.","I wrote two developed main ideas, each with an example."]],
+ ["Coherence and cohesion",["My essay has four paragraphs and each one has a single main idea.","I used linking words correctly, without repeating the same one."]],
+ ["Lexical resource",["I used topic vocabulary and did not repeat the same words.","I paraphrased the question instead of copying it."]],
+ ["Grammar",["I used a mix of short and longer sentences.","I checked my verb endings, articles and plurals."]]];
+const SELFN=SELF.reduce((n,x)=>n+x[1].length,0);
+function selfCount(){return Object.values(S.self).filter(Boolean).length;}
+function bandGuess(a){
+  const auto=a.pass/a.total, self=selfCount()/SELFN, mix=(auto*0.7+self*0.3);
+  if(a.n<250) return ["Under 250 words","A short answer is capped, whatever its quality. Write the full essay, then check again."];
+  if(selfCount()===0) return [a.pass+" of "+a.total+" automatic checks passed","Now tick the statements below. Your estimate appears as soon as you mark yourself."];
+  if(mix>=0.9) return ["Band 6.5 to 7 shape","Your essay has everything the examiner looks for. Accuracy of grammar and vocabulary decides the rest."];
+  if(mix>=0.75) return ["Around Band 6","A solid exam answer. Fix the red and orange points below to push higher."];
+  if(mix>=0.55) return ["Band 5.5 to 6","The main parts are there, but some are weak. Work through the failed checks."];
+  return ["Band 5 or below","Rebuild the essay around a clear position, four paragraphs and examples."];
 }
-function checkSteps(){
-  STEPS.forEach(([id])=>{if(id!=="finish"&&!S.done[id]&&stepDone(id)){S.done[id]=true;toast("🏅 Badge earned: "+BADGES[id]);confetti(90);}});
-  renderTop();renderRail();
-}
-
-/* chrome */
-function renderTop(){
-  $("#score").textContent="⭐ "+score()+" / "+MAX;
-  const n=STEPS.filter(([id])=>S.done[id]).length;
-  $("#progbar").style.width=Math.round(100*n/STEPS.length)+"%";
+/* ---------- chrome ---------- */
+function stepOK(id){
+  if(id==="question"||id==="brief")return true;
+  if(!S.qid)return false;
+  if(id==="model"||id==="result")return S.submitted;
+  return true;
 }
 function renderRail(){
-  $("#rail").innerHTML=STEPS.map(([id,en,ar],i)=>`<button class="rs ${id===cur?"on":""} ${S.done[id]?"ok":""}" data-act="go" data-s="${id}" ${id===cur?'aria-current="step"':""}><span class="n">${S.done[id]?"✓":i+1}</span><span class="t">${en}<small>${ar}</small></span></button>`).join("");
+  $("#rail").innerHTML=STEPS.map(([id,en,ar],i)=>`<button class="rs ${id===cur?"on":""} ${S.done[id]?"ok":""}" data-act="go" data-s="${id}" ${stepOK(id)?"":"disabled"}><span class="n">${S.done[id]?"✓":i+1}</span><span class="t">${en}<small>${ar}</small></span></button>`).join("");
 }
-function navHTML(){
-  const i=STEPS.findIndex(s=>s[0]===cur);
-  const b=i>0?`<button class="btn ghost" data-act="go" data-s="${STEPS[i-1][0]}">Back</button>`:"<span></span>";
-  const n=i<STEPS.length-1?`<button class="btn" data-act="go" data-s="${STEPS[i+1][0]}">Next: ${STEPS[i+1][1]}</button>`:"";
-  return `<div class="navrow">${b}${n}</div>`;
+function renderClock(){
+  const c=$("#clock"),b=$("#pausebtn");
+  if(S.untimed){c.textContent="No timer";c.className="clock off";b.hidden=true;return;}
+  const l=left();
+  c.textContent=mmss(l);
+  c.className="clock"+(!S.started?" off":l<=300?" bad":l<=600?" warn":"");
+  b.hidden=!S.started||S.timeUp;b.textContent=S.running?"Pause":"Resume";
+  $("#wpill").textContent=words(S.text)+" words";
+}
+function startClock(){
+  if(tick)clearInterval(tick);
+  tick=setInterval(()=>{
+    if(!S.running||S.untimed||S.timeUp)return;
+    S.elapsed++;
+    if(left()<=0){S.timeUp=true;S.running=false;toast("Time is up. Stop writing and go to Check.");if(cur==="write")render();}
+    if(left()===600||left()===300)toast(mmss(left()).slice(0,2).replace(/^0/,"")+" minutes left.");
+    renderClock();saveLocal();
+  },1000);
 }
 function go(id){
-  cur=id;S.step=id;
-  if(id==="finish"&&!S.done.finish){S.done.finish=true;toast("🏆 Badge earned: "+BADGES.finish);confetti(160);}
-  render();window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+  if(!stepOK(id))return;
+  if(id==="write"&&S.started&&!S.timeUp)S.running=true;
+  cur=id;S.step=id;S.done[id]=true;render();window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
 }
 function render(){
-  renderTop();renderRail();
-  const f={notice:pNotice,words:pWords,practice:pPractice,upgrade:pUpgrade,model:pModel,yourturn:pYour,finish:pFinish}[cur];
-  $("#main").innerHTML=f()+navHTML();
-  if(cur==="yourturn")updMeters();
+  renderRail();renderClock();
+  const f={brief:pBrief,question:pQuestion,plan:pPlan,write:pWrite,check:pCheck,model:pModel,result:pResult}[cur];
+  $("#main").innerHTML=f()+nav();
+  if(cur==="write"){const t=$("#essay");if(t){t.focus();t.setSelectionRange(t.value.length,t.value.length);}updWrite();}
+  saveLocal();
 }
-
-/* steps */
-function hero(){
-  return `<section class="hero"><div class="num" aria-hidden="true">${L.num}</div><h1>${esc(L.headline)}</h1><p class="sub">${esc(L.subtitle)}</p><p class="ar">${esc(L.arTitle)}</p>
-  <div class="obj"><b>By the end of this lesson, you will…</b><ul>${L.objectives.map(o=>`<li>${esc(o)}</li>`).join("")}</ul></div></section>`;
+function nav(){
+  const i=STEPS.findIndex(s=>s[0]===cur);
+  const prev=i>0?`<button class="btn ghost" data-act="go" data-s="${STEPS[i-1][0]}">Back</button>`:"<span></span>";
+  const nx=STEPS[i+1];
+  const next=nx&&stepOK(nx[0])?`<button class="btn" data-act="go" data-s="${nx[0]}">Next: ${nx[1]}</button>`:"";
+  return `<div class="navrow">${prev}${next}</div>`;
 }
-function pNotice(){
-  const N=L.notice, f=new Set(S.found), done=stepDone("notice"), lines=[];
-  TOK.forEach((o,i)=>{(lines[o.li]=lines[o.li]||[]).push(`<span class="tok ${(f.has(i)||(S.revealed&&TG.has(o.c)))?"hit":""}" data-act="tok" data-i="${i}">${esc(o.t)}</span>`);});
-  return hero()+`<section class="card"><h2>Notice</h2><p class="lead">${esc(N.intro)}</p><p class="ar">${esc(N.ar)}</p>
-  <div class="passage">${lines.map(l=>`<p>${l.join(" ")}</p>`).join("")}</div>
-  <div class="row"><span class="count">Found ${TGI.filter(i=>f.has(i)).length} of ${TGI.length}</span>${done?"":'<button class="btn ghost" data-act="reveal">Show me</button>'}</div>
-  ${done?`<div class="fb ok">${mark(N.note)}</div>`:""}</section>`;
+/* ---------- steps ---------- */
+const FRAME=`<div class="qbox"><div class="h">Your introduction, sentence by sentence</div>
+  <p>1. Some people believe that <i>…view A…</i>, while others argue that <i>…view B…</i>.</p>
+  <p>2. In my opinion, <i>…your position…</i>.</p>
+  <p>3. In this essay I will discuss both sides and give reasons to support my opinion.</p>
+  <p class="small">Body 1: one view, with reasons and an example. Body 2: the other view, and why you agree or disagree with it. Conclusion: your opinion again, in new words.</p></div>`;
+function pBrief(){
+  return `<section class="hero"><div class="mark">🖊️</div><div><h1>Task 2 exam practice: agree or disagree</h1>
+  <p>One question, 40 minutes, 250 words. Exactly like the midterm.</p><p class="ar">سؤال واحد، 40 دقيقة، 250 كلمة. تمامًا مثل الاختبار النصفي.</p></div></section>
+  <section class="card"><h2>Before you start</h2>
+  <ul><li><b>Time:</b> 40 minutes in total. Plan for 5, write for 30, check for 5.</li>
+  <li><b>Length:</b> at least 250 words. Fewer than 250 words loses marks automatically.</li>
+  <li><b>Shape:</b> introduction, two body paragraphs, conclusion. Leave an empty line between paragraphs.</li>
+  <li><b>Both sides:</b> give the two views and your own opinion. One body paragraph explains the view you do not hold, and you answer it.</li>
+  <li><b>Position:</b> state your opinion in the introduction and keep the same position to the end.</li>
+  <li>The model answer stays locked until you hand in your writing, so work on your own first.</li></ul>
+  ${FRAME}
+  <div class="banner warn">The clock starts when you open the Plan step. You can pause it, but in the real exam you cannot.</div>
+  <div class="self"><label><input type="checkbox" data-act="untimed" ${S.untimed?"checked":""}> Practice without a timer (use this the first time, then switch it off)</label></div>
+  <div class="row"><button class="btn go" data-act="go" data-s="question">Choose a question</button></div></section>`;
 }
-function pWords(){
-  return `<section class="card"><h2>Words</h2><p class="lead">Tap each card to see the meaning, the Arabic and an example. Tap 🔊 to hear it.</p>
-  <p class="ar">اضغط على كل بطاقة لترى المعنى والترجمة العربية ومثالًا. اضغط 🔊 للاستماع.</p>
-  <div class="count" id="seencount">Opened ${S.seen.length} of ${L.words.length}</div>
-  <div class="cards">${L.words.map((w,i)=>`<div class="flip ${S.seen.includes(i)?"seen":""}" data-act="flip" data-i="${i}" tabindex="0" role="button" aria-label="${esc(w.w)}"><div class="in">
-   <div class="face front"><span class="pos">${esc(w.pos)}</span><b>${esc(w.w)}</b><button class="say" data-act="say" data-t="${esc(w.say||w.w)}" aria-label="Listen to ${esc(w.w)}">🔊</button></div>
-   <div class="face back"><p class="ar big">${esc(w.ar)}</p><p class="def">${esc(w.def)}</p><p class="ex">${mark(w.ex)}</p></div></div></div>`).join("")}</div></section>`;
+function pQuestion(){
+  return `<section class="card"><h2>Choose your exam question</h2>
+  <p>Pick one question, or take a random one for a realistic exam.</p><p class="ar">اختر سؤالًا واحدًا، أو اختر سؤالًا عشوائيًا لمحاكاة الامتحان.</p>
+  <div class="row"><button class="btn ghost" data-act="rand">Give me a random question</button></div>
+  <div class="qlist">${QS.map(q=>`<button class="qc ${S.qid===q.id?"sel":""}" data-act="pick" data-q="${q.id}"><span class="tag">${esc(q.topic)}</span><b>${esc(q.q)}</b></button>`).join("")}</div>
+  ${S.qid?`<div class="row"><button class="btn go" data-act="start">${S.started?"Continue exam":"Start the exam"}</button>${S.started?`<span class="small">Time used: ${mmss(S.elapsed)}</span>`:""}</div>`:`<p class="small" style="margin-top:.8rem">Choose a question to begin.</p>`}
+  ${S.submitted?`<div class="banner warn">You have already handed in an answer for this attempt. Choosing a new question starts a new attempt and clears your writing.</div>`:""}</section>`;
 }
-function itemsHTML(prefix,arr){return arr.map((_,i)=>`<div id="it-${prefix}${i}">${itemHTML(prefix+i,i+1)}</div>`).join("");}
-function pPractice(){
-  return `<section class="card"><h2>Practice</h2><p class="lead">${esc(L.practiceLead)}</p><p class="ar">${esc(L.practiceAr)}</p></section>`+itemsHTML("p",L.practice);
+function pPlan(){
+  const q=Q(),p=S.plan;
+  return `<section class="card"><h2>Plan: 5 minutes</h2>
+  <div class="qbox"><div class="h">Your question</div><p>${esc(q.q)}</p><p class="small">Write at least 250 words. You have 40 minutes for the whole task.</p></div>
+  <p>Write the two views first, then your own position. A plan takes five minutes and saves you ten.</p><p class="ar">اكتب وجهتَي النظر أولًا، ثم موقفك الشخصي. التخطيط خمس دقائق يوفّر عليك عشرًا.</p>
+  ${FRAME}
+  <div class="plan">
+  <label>Some people believe… (view A) <input data-p="va" value="${esc(p.va)}" placeholder="The first side of the argument"></label>
+  <label>…while others believe… (view B) <input data-p="vb" value="${esc(p.vb)}" placeholder="The opposite side"></label>
+  <label>My position
+   <select data-p="pos"><option value="">Choose…</option>${["I completely agree","I partly agree","I completely disagree","I agree, with one condition"].map(o=>`<option ${p.pos===o?"selected":""}>${o}</option>`).join("")}</select></label>
+  <label>Body 1 idea <input data-p="i1" value="${esc(p.i1)}" placeholder="The first view and why people hold it"></label>
+  <label>Example for body 1 <input data-p="e1" value="${esc(p.e1)}" placeholder="A specific situation, person or place"></label>
+  <label>Body 2 idea <input data-p="i2" value="${esc(p.i2)}" placeholder="The other view, and your answer to it"></label>
+  <label>Example for body 2 <input data-p="e2" value="${esc(p.e2)}" placeholder="A specific situation, person or place"></label>
+  <label>My conclusion in one line <input data-p="con" value="${esc(p.con)}" placeholder="Same position, different words"></label>
+  </div>
+  <div class="row"><button class="btn go" data-act="go" data-s="write">Start writing</button></div></section>`;
 }
-function pUpgrade(){
-  return `<section class="card"><h2>Upgrade it</h2><p class="lead">${esc(L.upgradeLead)}</p><p class="ar">${esc(L.upgradeAr)}</p></section>`+itemsHTML("u",L.upgrade);
+function pWrite(){
+  const q=Q(),p=S.plan;
+  const planLine=[p.va&&("Some: "+p.va),p.vb&&("Others: "+p.vb),p.pos,p.i1,p.i2].filter(Boolean).join("  |  ");
+  return `<section class="card"><h2>Write your answer</h2>
+  <div class="qbox"><div class="h">Task 2 question</div><p>${esc(q.q)}</p><p class="small">Write at least 250 words. Leave an empty line between paragraphs.</p><p class="small"><b>Introduction:</b> both views, then your opinion, then what the essay will do.</p></div>
+  ${planLine?`<p class="small"><b>Your plan:</b> ${esc(planLine)}</p>`:""}
+  ${S.timeUp?`<div class="banner bad">Time is up. In the real exam you would stop here. <button class="btn ghost" data-act="extra">Add 5 minutes (practice only)</button></div>`:""}
+  <textarea id="essay" ${S.timeUp?"readonly":""} placeholder="Introduction…&#10;&#10;Body paragraph 1…&#10;&#10;Body paragraph 2…&#10;&#10;Conclusion…" spellcheck="false">${esc(S.text)}</textarea>
+  <div class="meters">
+    <div class="meter" id="mw"><b></b><span>words (minimum 250)</span></div>
+    <div class="meter" id="mp"><b></b><span>paragraphs (aim for 4)</span></div>
+    <div class="meter" id="ml"><b></b><span>linking words used</span></div>
+    <div class="meter" id="mt"><b></b><span>time used</span></div>
+  </div>
+  <p class="small">Spell check is off, just like the exam. Your work saves automatically in this browser.</p>
+  <div class="row"><button class="btn go" data-act="submit">Hand in and check my answer</button></div></section>`;
+}
+function updWrite(){
+  const a={n:words(S.text),p:paras(S.text).length,l:foundLinkers(S.text).length};
+  const set=(id,v,ok)=>{const m=$("#"+id);if(!m)return;m.querySelector("b").textContent=v;m.classList.toggle("met",ok);};
+  set("mw",a.n,a.n>=250);set("mp",a.p,a.p>=4);set("ml",a.l,a.l>=6);set("mt",mmss(S.elapsed),false);
+  $("#wpill").textContent=a.n+" words";
+}
+function pCheck(){
+  if(!S.submitted)return `<section class="card"><h2>Check</h2><p>Hand in your answer on the Write step first.</p><div class="row"><button class="btn" data-act="go" data-s="write">Back to writing</button></div></section>`;
+  const a=analyse(),b=bandGuess(a);
+  return `<section class="card"><h2>Exam report</h2>
+  <div class="score"><span>${a.pass}/${a.total}</span><div><b id="bandt">${esc(b[0])}</b><br><span class="small" id="bandn">${esc(b[1])}</span></div></div>
+  <p class="small">This is an automatic check of the things an examiner looks for first. It is not an official band score: only your teacher can give you that.</p>
+  <div class="checks">${a.C.map(c=>`<div class="chk ${c.st==="pass"?"pass":c.st==="fail"?"fail":"warnc"}"><div class="ic">${c.st==="pass"?"✓":c.st==="fail"?"✗":"!"}</div><div><b>${esc(c.title)}</b><p>${esc(c.note)}</p></div></div>`).join("")}</div>
+  </section>
+  <section class="card"><h2>Now mark yourself</h2><p>Read your answer again and tick only what is true.</p>
+  <div class="self">${SELF.map(([crit,items])=>`<div class="crit">${crit}</div>`+items.map((t,i)=>{const k=crit+i;return `<label><input type="checkbox" data-self="${esc(k)}" ${S.self[k]?"checked":""}> ${esc(t)}</label>`;}).join("")).join("")}</div>
+  <p class="small" style="margin-top:.6rem">Ticked: <b id="selfn">${selfCount()}</b> of ${SELFN}. Your ticks are part of the score above.</p>
+  <div class="row"><button class="btn go" data-act="go" data-s="model">Compare with the model answer</button></div></section>`;
 }
 function pModel(){
-  const M=L.model, words=M.paras.map(p=>plain(p.text)).join(" ").trim().split(/\s+/).length;
+  const q=Q(),a=analyse();
+  const m=q.paras.map(p=>plain(p.text)).join(" ");
   return `<section class="card"><h2>Model answer</h2>
-  <div class="task"><div class="task-h">Task 2 question</div><p>${esc(M.question)}</p><p class="ar">${esc(M.ar)}</p><p class="small">Spend about 40 minutes on this task. Write at least 250 words.</p></div>
-  <div class="note">${mark(M.note)}</div>
-  <div class="toggles"><button class="tgl ${hideLw?"off":""}" data-act="tg" data-c="lw" aria-pressed="${!hideLw}">Lesson words</button><button class="tgl ${hideLk?"off":""}" data-act="tg" data-c="lk" aria-pressed="${!hideLk}">Linking words</button></div>
-  <article class="essay ${hideLw?"hide-lw":""} ${hideLk?"hide-lk":""}">${M.paras.map(p=>`<div class="para"><div class="plabel">${esc(p.label)}</div><p>${mark(p.text)}</p></div>`).join("")}<div class="wcount">${words} words</div></article>
-  <p class="small"><mark class="lw">Underlined</mark> = words from this lesson. <span class="lk">Dotted</span> = linking words.</p></section>
-  <h3>Check your understanding</h3>`+itemsHTML("m",M.checks);
+  <div class="qbox"><div class="h">Task 2 question</div><p>${esc(q.q)}</p></div>
+  <div class="essayview">${q.paras.map(p=>`<div class="para"><div class="plabel">${esc(p.label)}</div><p>${mk(p.text)}</p></div>`).join("")}</div>
+  <p class="small"><mark class="pos">Underlined</mark> = position language. <span class="lk">Dotted</span> = linking words. ${words(m)} words.</p>
+  <h3>Why this answer works</h3><ul>${q.why.map(w=>`<li>${esc(w)}</li>`).join("")}</ul>
+  <h3>Your answer beside the model</h3>
+  <table class="cmp"><tr><th></th><th>You</th><th>Model</th></tr>
+  <tr><td>Words</td><td>${a.n}</td><td>${words(m)}</td></tr>
+  <tr><td>Paragraphs</td><td>${a.P.length}</td><td>${q.paras.length}</td></tr>
+  <tr><td>Different linking words</td><td>${a.lk.length}</td><td>${foundLinkers(m).length}</td></tr>
+  <tr><td>Sentences</td><td>${a.S2.length}</td><td>${sentences(m).length}</td></tr>
+  <tr><td>Average sentence length</td><td>${a.avg} words</td><td>${Math.round(words(m)/sentences(m).length)} words</td></tr></table>
+  <div class="banner ok">Do not copy the model. Take two or three phrases from it and use them in your next answer.</div>
+  <div class="row"><button class="btn go" data-act="go" data-s="result">See my result</button></div></section>`;
 }
-function pYour(){
-  const Y=L.yourturn;
-  return `<section class="card"><h2>Your turn</h2><div class="task"><p>${mark(Y.task)}</p><p class="ar">${esc(Y.ar)}</p></div>
-  <div class="chipbox"><div class="chip-h">Lesson words: use at least ${Y.useWords}</div>
-  <div class="chips">${L.words.map((w,i)=>`<button class="chip lwc" data-act="ins" data-t="${esc(w.chip||w.w)}" id="cw${i}">${esc(w.chip||w.w)}</button>`).join("")}</div>
-  <div class="chip-h">Linking words: use at least ${Y.useLinks}</div>
-  <div class="chips">${Y.links.map((l,i)=>`<button class="chip lkc" data-act="ins" data-t="${esc(l)}" id="cl${i}">${esc(l)}</button>`).join("")}</div>
-  <p class="small">Tap a word to add it to your writing. Words you have used turn green.</p></div>
-  <label for="ta" class="chip-h">Write here</label>
-  <textarea id="ta" spellcheck="true">${esc(S.text)}</textarea>
-  <div class="meters"><div class="meter" id="m1"><b></b><span>words (aim: ${Y.min}+)</span></div><div class="meter" id="m2"><b></b><span>lesson words (target: ${Y.useWords})</span></div><div class="meter" id="m3"><b></b><span>linking words (target: ${Y.useLinks})</span></div></div>
-  <div class="check"><b>Check your writing</b>${Y.checklist.map((c,i)=>`<label><input type="checkbox" data-cl="${i}" ${S.cl[i]?"checked":""}> ${esc(c)}</label>`).join("")}</div>
-  <button class="btn ghost" data-act="sample">${S.sample?"Hide":"Show"} sample answer</button>
-  ${S.sample?`<div class="sample">${mark(Y.sample)}</div>`:""}</section>`;
+function pResult(){
+  const a=analyse(),b=bandGuess(a),q=Q();
+  return `<section class="card"><h2>Attempt finished</h2>
+  <div class="score"><span>${a.pass}/${a.total}</span><div><b>${esc(b[0])}</b><br><span class="small">${a.n} words · ${mmss(S.elapsed)} used · ${selfCount()}/${SELFN} self-checks</span></div></div>
+  <p class="small">Question: ${esc(q.q)}</p>
+  <h3>Your three next steps</h3><ul>${a.C.filter(c=>c.st!=="pass").slice(0,3).map(c=>`<li><b>${esc(c.title)}</b> — ${esc(c.note)}</li>`).join("")||"<li>Everything passed. Write a second answer on a new question, faster this time.</li>"}</ul>
+  <div class="row"><button class="btn" data-act="download">Download my answer</button><button class="btn ghost" data-act="save">Save progress file</button><button class="btn ghost" data-act="print">Print</button><button class="btn ghost" data-act="again">New attempt</button></div></section>
+  ${hist.length?`<section class="card"><h2>Your attempts on this computer</h2>
+  <table class="hist"><tr><th>Date</th><th>Question</th><th>Words</th><th>Time</th><th>Checks</th></tr>
+  ${hist.slice(-8).reverse().map(h=>`<tr><td>${esc(h.date)}</td><td>${esc(h.topic)}</td><td>${h.n}</td><td>${esc(h.time)}</td><td>${h.pass}/${h.total}</td></tr>`).join("")}</table></section>`:""}`;
 }
-function updMeters(){
-  const Y=L.yourturn,n=wc(),uw=usedW(),ul=usedL(),a=uw.filter(Boolean).length,b=ul.filter(Boolean).length;
-  const set=(id,v,ok)=>{const m=$("#"+id);if(!m)return;m.querySelector("b").textContent=v;m.classList.toggle("met",ok);};
-  set("m1",n,n>=Y.min);set("m2",a,a>=Y.useWords);set("m3",b,b>=Y.useLinks);
-  uw.forEach((u,i)=>{const c=$("#cw"+i);if(c)c.classList.toggle("used",u);});
-  ul.forEach((u,i)=>{const c=$("#cl"+i);if(c)c.classList.toggle("used",u);});
-}
-function pFinish(){
-  const p=pct();
-  return `<section class="card fin"><h2>Finish</h2>
-  <div class="bigscore"><span>${p}%</span><small>${score()} of ${MAX} points<br>Your first answer in each activity counts.</small></div>
-  ${p>=80?`<p><b>Excellent work! You have earned your certificate.</b></p><p class="ar">عمل ممتاز! لقد حصلت على شهادتك.</p>
-    <div class="row"><label>Your name<input id="nm" value="${esc(S.name)}" autocomplete="name"></label><button class="btn" data-act="cert">Create certificate</button></div>`
-  :`<p><b>You need 80% for a certificate.</b> Finish every activity first. If you have finished, reset the lesson and try again.</p><p class="ar">تحتاج إلى 80٪ للحصول على الشهادة. أكمل جميع الأنشطة أولًا، ثم أعد الدرس إذا احتجت.</p>`}
-  <h3>Your badges</h3><div class="badges">${STEPS.map(([id,en,,ic])=>`<div class="badge ${S.done[id]?"got":""}"><span>${ic}</span><b>${BADGES[id]}</b><small>${en}</small></div>`).join("")}</div>
-  <div class="row"><button class="btn ghost" data-act="save">Save progress</button><button class="btn ghost" data-act="reset">Reset lesson</button></div></section>
-  <section class="card"><h2>Words from this lesson</h2><table class="wl">${L.words.map(w=>`<tr><td><b>${esc(w.w)}</b> <span class="small">${esc(w.pos)}</span></td><td>${esc(w.def)}</td><td>${esc(w.ar)}</td></tr>`).join("")}</table>
-  ${L.next?`<p class="note"><b>Next lesson:</b> ${esc(L.next)}</p>`:""}</section>`;
-}
-
-/* items */
-function itemHTML(k,n){
-  const it=ITEMS[k], r=st(k);
-  let h=`<div class="item ${r.done?"done":""}"><div class="qnum">${n}</div><div class="qbody">`;
-  if(it.type==="mc"){
-    let q=esc(it.q);
-    q=q.replace("___",r.done?`<span class="gap">${esc(it.options[it.a])}</span>`:`<span class="gap">&nbsp;</span>`);
-    h+=`<p class="q">${q}</p>${it.ar?`<p class="ar">${esc(it.ar)}</p>`:""}<div class="opts">`;
-    h+=r.perm.map(o=>{const cls=(r.done&&o===it.a)?"right":r.tried.includes(o)&&o!==it.a?"wrong":"";return `<button class="opt ${cls}" data-act="mc" data-k="${k}" data-o="${o}" ${r.done||r.tried.includes(o)?"disabled":""}>${esc(it.options[o])}</button>`;}).join("");
-    h+=`</div>`;
-    if(r.done)h+=`<div class="fb ok"><b>${r.pts?"Correct! +10":"Correct."}</b> ${mark(it.why||"")}</div>`;
-    else if(r.tried.length)h+=`<div class="fb no"><b>Not quite.</b> Try again.</div>`;
-  }
-  if(it.type==="sort"){
-    const left=r.perm.filter(i=>r.placed[i]===undefined);
-    h+=`<p class="q">${esc(it.q)}</p><p class="hint">Tap a card, then tap the box it belongs in.</p><div class="bank">${left.map(i=>`<button class="tile ${r.sel===i?"sel":""}" data-act="spick" data-k="${k}" data-i="${i}">${esc(it.items[i].t)}</button>`).join("")}</div>
-    <div class="buckets">${it.buckets.map((b,bi)=>`<button class="bucket" data-act="sdrop" data-k="${k}" data-b="${bi}"><b>${esc(b)}</b>${Object.keys(r.placed).filter(i=>r.placed[i]===bi).map(i=>`<span class="placed">${esc(it.items[i].t)}</span>`).join("")}</button>`).join("")}</div>`;
-    if(r.done)h+=`<div class="fb ok"><b>Done! +${r.pts}</b> ${r.bad.length?`You had ${r.bad.length} wrong first try.`:"Perfect first time."} ${mark(it.why||"")}</div>`;
-  }
-  if(it.type==="match"){
-    h+=`<p class="q">${esc(it.q)}</p><p class="hint">Tap a word on the left, then its partner on the right.</p><div class="match"><div class="col">${r.lp.map(i=>`<button class="mt ${r.m[i]?"paired":""} ${r.sel===i?"sel":""}" data-act="ml" data-k="${k}" data-i="${i}" ${r.m[i]||r.done?"disabled":""}>${esc(it.pairs[i][0])}</button>`).join("")}</div>
-    <div class="col">${(r.done?r.lp:r.rp).map(i=>`<button class="mt ${r.m[i]?"paired":""}" data-act="mr" data-k="${k}" data-i="${i}" ${r.m[i]||r.done?"disabled":""}>${esc(it.pairs[i][1])}</button>`).join("")}</div></div>`;
-    if(r.done)h+=`<div class="fb ok"><b>All matched! +${r.pts}</b> ${r.bad.length?`You had ${r.bad.length} wrong first try.`:"Perfect first time."} ${mark(it.why||"")}</div>`;
-  }
-  if(it.type==="order"){
-    const rest=r.perm.filter(i=>!r.ans.includes(i));
-    h+=`<p class="q">${esc(it.q)}</p>${it.ar?`<p class="ar">${esc(it.ar)}</p>`:""}<div class="line">${r.ans.map(i=>`<button class="tile" data-act="oback" data-k="${k}" data-i="${i}" ${r.done?"disabled":""}>${esc(it.tiles[i])}</button>`).join("")}</div>
-    <div class="bank">${rest.map(i=>`<button class="tile" data-act="oadd" data-k="${k}" data-i="${i}">${esc(it.tiles[i])}</button>`).join("")}</div>`;
-    if(!r.done){h+=`<div class="row"><button class="btn" data-act="ocheck" data-k="${k}" ${r.ans.length<it.tiles.length?"disabled":""}>Check</button>${r.wrong?`<button class="btn ghost" data-act="oshow" data-k="${k}">Show answer</button>`:""}</div>`;
-      if(r.wrong)h+=`<div class="fb no"><b>Not quite.</b> Tap pieces in the answer line to move them back, then try again.</div>`;}
-    else h+=`<div class="fb ok"><b>${r.pts?"Correct! +10":"Here is the answer."}</b> ${mark(it.why||"")}</div>`;
-  }
-  return h+`</div></div>`;
-}
-function reItem(k){const el=$("#it-"+k);if(el){const n=el.querySelector(".qnum").textContent;el.innerHTML=itemHTML(k,n);}checkSteps();}
-function flashEl(sel){const e=$(sel);if(e){e.classList.add("bad","flashbad");setTimeout(()=>e.classList.remove("bad","flashbad"),450);}}
-
-/* speech */
-let voice=null;
-function pickVoice(){const v=speechSynthesis.getVoices();voice=v.find(x=>/en-GB/i.test(x.lang))||v.find(x=>/^en/i.test(x.lang))||null;}
-if("speechSynthesis" in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
-function say(t){if(!("speechSynthesis" in window)){toast("Audio is not available in this browser.");return;}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);if(voice)u.voice=voice;u.lang=voice?voice.lang:"en-GB";u.rate=.9;speechSynthesis.speak(u);}
-
-/* events */
+/* ---------- events ---------- */
 document.addEventListener("click",e=>{
   const b=e.target.closest("[data-act]");if(!b)return;
-  const a=b.dataset.act, k=b.dataset.k;
+  const a=b.dataset.act;
   if(a==="go")return go(b.dataset.s);
-  if(a==="save")return save();
-  if(a==="load")return $("#file").click();
-  if(a==="say"){e.stopPropagation();return say(b.dataset.t);}
-  if(a==="tok"){
-    const i=+b.dataset.i;
-    if(S.revealed||S.found.includes(i))return;
-    if(TG.has(TOK[i].c)){S.found.push(i);render();checkSteps();}
-    else{b.classList.add("miss");setTimeout(()=>b.classList.remove("miss"),500);}
-    return;
+  if(a==="pause"){if(S.timeUp)return;S.running=!S.running;renderClock();toast(S.running?"Timer running.":"Timer paused.");return;}
+  if(a==="rand"){const pool=QS.filter(q=>q.id!==S.qid);const q=pool[Math.floor(Math.random()*pool.length)];pick(q.id);return;}
+  if(a==="pick")return pick(b.dataset.q);
+  if(a==="start"){if(!S.started){S.started=true;S.running=!S.untimed;startClock();}else if(!S.timeUp&&!S.untimed)S.running=true;go("plan");return;}
+  if(a==="extra"){S.extra+=300;S.timeUp=false;S.running=!S.untimed;render();toast("Five extra minutes added. The real exam does not do this.");return;}
+  if(a==="submit"){
+    if(words(S.text)<60&&!confirm("You have written very little. Hand it in anyway?"))return;
+    S.submitted=true;S.running=false;S.finishedAt=new Date().toLocaleString("en-GB");
+    const a2=analyse();
+    hist.push({date:new Date().toLocaleDateString("en-GB"),topic:Q().topic,n:a2.n,time:mmss(S.elapsed),pass:a2.pass,total:a2.total});
+    try{localStorage.setItem(HKEY,JSON.stringify(hist.slice(-20)));}catch(err){}
+    go("check");return;
   }
-  if(a==="reveal"){S.revealed=true;render();checkSteps();return;}
-  if(a==="flip"){flip(b);return;}
-  if(a==="mc"){const r=st(k),o=+b.dataset.o;if(r.done)return;r.tried.push(o);if(o===ITEMS[k].a){r.done=true;r.pts=r.tried.length===1?10:0;if(r.pts)confetti(25);}reItem(k);return;}
-  if(a==="spick"){const r=st(k);r.sel=+b.dataset.i;reItem(k);return;}
-  if(a==="sdrop"){const r=st(k),it=ITEMS[k],bi=+b.dataset.b;if(r.sel==null||r.done)return;
-    if(it.items[r.sel].b===bi){r.placed[r.sel]=bi;r.sel=null;if(Object.keys(r.placed).length===it.items.length){r.done=true;r.pts=Math.round(10*(it.items.length-r.bad.length)/it.items.length);confetti(40);}reItem(k);}
-    else{if(!r.bad.includes(r.sel))r.bad.push(r.sel);flashEl(`#it-${k} .bucket[data-b="${bi}"]`);}
-    return;}
-  if(a==="ml"){const r=st(k);r.sel=+b.dataset.i;reItem(k);return;}
-  if(a==="mr"){const r=st(k),it=ITEMS[k],i=+b.dataset.i;if(r.sel==null||r.done)return;
-    if(i===r.sel){r.m[i]=true;r.sel=null;if(Object.keys(r.m).length===it.pairs.length){r.done=true;r.pts=Math.round(10*(it.pairs.length-r.bad.length)/it.pairs.length);confetti(40);}reItem(k);}
-    else{if(!r.bad.includes(r.sel))r.bad.push(r.sel);flashEl(`#it-${k} .mt[data-act="mr"][data-i="${i}"]`);}
-    return;}
-  if(a==="oadd"){const r=st(k);if(r.done)return;r.ans.push(+b.dataset.i);r.wrong=false;reItem(k);return;}
-  if(a==="oback"){const r=st(k);if(r.done)return;r.ans=r.ans.filter(x=>x!==+b.dataset.i);reItem(k);return;}
-  if(a==="ocheck"){const r=st(k),it=ITEMS[k];r.checks++;
-    if(r.ans.map(i=>it.tiles[i]).join(" ")===it.tiles.join(" ")){r.done=true;r.pts=r.checks===1?10:0;if(r.pts)confetti(25);}else r.wrong=true;
-    reItem(k);return;}
-  if(a==="oshow"){const r=st(k),it=ITEMS[k];r.ans=it.tiles.map((_,i)=>i);r.done=true;r.pts=0;reItem(k);return;}
-  if(a==="tg"){if(b.dataset.c==="lw")hideLw=!hideLw;else hideLk=!hideLk;render();return;}
-  if(a==="ins"){const ta=$("#ta");if(!ta)return;const s=ta.selectionStart,en=ta.selectionEnd,before=ta.value.slice(0,s);
-    const pre=before&&!/\s$/.test(before)?" ":"";ta.setRangeText(pre+b.dataset.t+" ",s,en,"end");ta.focus();S.text=ta.value;updMeters();checkSteps();return;}
-  if(a==="sample"){if(!S.sample&&wc()<L.yourturn.min&&!confirm("Try writing your own answer first. Show the sample anyway?"))return;S.sample=!S.sample;render();return;}
-  if(a==="cert")return cert();
-  if(a==="print"){document.body.classList.add("printing");window.print();setTimeout(()=>document.body.classList.remove("printing"),500);return;}
-  if(a==="closecert"){$("#cert").hidden=true;return;}
-  if(a==="reset"){if(confirm("Reset this lesson? All answers and your writing will be cleared.")){S=fresh();cur="notice";render();toast("Lesson reset.");}return;}
+  if(a==="download")return download();
+  if(a==="save")return saveFile();
+  if(a==="load")return $("#file").click();
+  if(a==="print"){window.print();return;}
+  if(a==="again"){if(!confirm("Start a new attempt? Your current answer will be cleared. Download it first if you want to keep it."))return;
+    const u=S.untimed;S=fresh();S.untimed=u;cur="question";if(tick)clearInterval(tick);render();toast("New attempt ready.");return;}
 });
-function flip(card){
-  card.classList.toggle("on");
-  const i=+card.dataset.i;
-  if(!S.seen.includes(i)){S.seen.push(i);card.classList.add("seen");const c=$("#seencount");if(c)c.textContent=`Opened ${S.seen.length} of ${L.words.length}`;checkSteps();}
+function pick(id){
+  if(S.text.trim()&&S.qid!==id&&!confirm("Change the question? Your current answer will be cleared."))return;
+  if(S.qid!==id){const u=S.untimed;S=fresh();S.untimed=u;S.qid=id;}
+  render();
 }
-document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList&&e.target.classList.contains("flip")){e.preventDefault();flip(e.target);}});
-document.addEventListener("input",e=>{if(e.target.id==="ta"){S.text=e.target.value;updMeters();checkSteps();}if(e.target.id==="nm")S.name=e.target.value;});
-document.addEventListener("change",e=>{if(e.target.dataset&&e.target.dataset.cl!==undefined)S.cl[e.target.dataset.cl]=e.target.checked;});
-
-/* save / load */
-function save(){
-  const blob=new Blob([JSON.stringify(S,null,1)],{type:"application/json"});
-  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`Task2-EssayLanguage-L${L.num}-progress.json`;
-  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
-  toast("Progress saved to your downloads.");
+document.addEventListener("input",e=>{
+  const t=e.target;
+  if(t.id==="essay"){S.text=t.value;updWrite();saveLocal();return;}
+  if(t.dataset.p){S.plan[t.dataset.p]=t.value;saveLocal();return;}
+});
+document.addEventListener("change",e=>{
+  const t=e.target;
+  if(t.dataset.p){S.plan[t.dataset.p]=t.value;saveLocal();return;}
+  if(t.dataset.self!==undefined){S.self[t.dataset.self]=t.checked;const n=$("#selfn");if(n)n.textContent=selfCount();
+    const bt=$("#bandt");if(bt){const g=bandGuess(analyse());bt.textContent=g[0];$("#bandn").textContent=g[1];}saveLocal();return;}
+  if(t.dataset.act==="untimed"){S.untimed=t.checked;if(S.untimed)S.running=false;else if(S.started&&!S.timeUp)S.running=true;renderClock();saveLocal();return;}
+});
+window.addEventListener("beforeunload",e=>{if(S.text.trim()&&!S.submitted){e.preventDefault();e.returnValue="";}});
+/* ---------- files ---------- */
+function dl(name,text,type){
+  const b=new Blob([text],{type:type||"text/plain;charset=utf-8"});const a=document.createElement("a");
+  a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
 }
+function download(){
+  const q=Q(),a=analyse(),p=S.plan;
+  const lines=["IELTS Writing Task 2 — exam practice (agree or disagree)","Date: "+(S.finishedAt||new Date().toLocaleString("en-GB")),"",
+   "QUESTION","-".repeat(60),q.q,"","MY PLAN","-".repeat(60),
+   "View A: "+(p.va||"—"),"View B: "+(p.vb||"—"),"Position: "+(p.pos||"—"),"Body 1: "+(p.i1||"—"),"Example 1: "+(p.e1||"—"),"Body 2: "+(p.i2||"—"),"Example 2: "+(p.e2||"—"),"Conclusion: "+(p.con||"—"),"",
+   "MY ANSWER ("+a.n+" words, "+mmss(S.elapsed)+" used)","-".repeat(60),S.text,"",
+   "AUTOMATIC CHECK ("+a.pass+"/"+a.total+")","-".repeat(60)].concat(a.C.map(c=>(c.st==="pass"?"[ok]  ":c.st==="fail"?"[fix] ":"[!]   ")+c.title+" — "+c.note));
+  dl("Task2-agree-disagree-"+(S.qid||"answer")+".txt",lines.join("\n"));
+  toast("Answer downloaded. Send the file to your teacher if she asks for it.");
+}
+function saveFile(){dl("Task2-exam-agree-progress.json",JSON.stringify(S,null,1),"application/json");toast("Progress saved to your downloads.");}
 $("#file").addEventListener("change",e=>{
-  const f=e.target.files[0];if(!f)return;const rd=new FileReader();
-  rd.onload=()=>{try{const o=JSON.parse(rd.result);if(o.lesson!==L.id){alert("This file is for a different lesson.");return;}
-    S=Object.assign(fresh(),o);cur=S.step||"notice";render();toast("Progress loaded.");}catch(err){alert("This file could not be read. Choose a progress file saved from this lesson.");}};
-  rd.readAsText(f);e.target.value="";
+  const f=e.target.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{const o=JSON.parse(r.result);if(!o||!("qid" in o))throw 0;S=Object.assign(fresh(),o);cur=S.step||"brief";if(S.started&&!S.timeUp&&!S.untimed){S.running=false;startClock();}render();toast("Progress loaded. The timer is paused.");}
+  catch(err){alert("This file could not be read. Choose a progress file saved from this app.");}};
+  r.readAsText(f);e.target.value="";
 });
-
-/* certificate */
-function cert(){
-  const nm=($("#nm")&&$("#nm").value.trim())||"";
-  if(!nm){toast("Type your name first.");$("#nm")&&$("#nm").focus();return;}
-  S.name=nm;
-  const d=new Date().toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
-  $("#cert").innerHTML=`<div class="cert-card" role="dialog" aria-label="Certificate"><div style="font-size:3rem">🏆</div><h2>Certificate of Achievement</h2>
-  <p>This certifies that</p><div class="who">${esc(nm)}</div>
-  <p>has successfully completed<br><b>IELTS Writing Task 2: Essay Language</b><br>Lesson ${L.num}: ${esc(L.title)}</p>
-  <p>Score: <b>${pct()}%</b> &nbsp; Date: ${d}</p><p class="small">Designed by: Nazila Motahari</p>
-  <div class="cert-actions"><button class="btn" data-act="print">Print</button><button class="btn ghost" data-act="closecert">Close</button></div></div>`;
-  $("#cert").hidden=false;confetti(220);
+function saveLocal(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function loadLocal(){
+  try{const h=localStorage.getItem(HKEY);if(h)hist=JSON.parse(h)||[];}catch(e){}
+  try{const s=localStorage.getItem(KEY);if(!s)return false;const o=JSON.parse(s);if(!o||!o.qid&&!o.text)return false;
+    S=Object.assign(fresh(),o);S.running=false;cur=S.step||"brief";if(S.started&&!S.timeUp)startClock();return true;}catch(e){return false;}
 }
-
-/* toast + confetti */
-let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),2600);}
-const cv=$("#confetti"),cx=cv.getContext("2d");let parts=[],running=false;
-function confetti(n){
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-  cv.width=innerWidth;cv.height=innerHeight;
-  const cs=getComputedStyle(document.documentElement),cols=[cs.getPropertyValue("--p"),cs.getPropertyValue("--a"),"#e0467c","#1f8a4c","#ffffff"];
-  for(let i=0;i<n;i++)parts.push({x:innerWidth/2+(Math.random()-.5)*200,y:innerHeight*.35,vx:(Math.random()-.5)*14,vy:-Math.random()*12-4,s:Math.random()*7+4,r:Math.random()*6,c:cols[i%cols.length].trim(),l:120});
-  if(!running){running=true;requestAnimationFrame(tick);}
-}
-function tick(){
-  cx.clearRect(0,0,cv.width,cv.height);
-  parts.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.r+=.1;p.l--;cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);cx.restore();});
-  parts=parts.filter(p=>p.l>0&&p.y<cv.height+20);
-  if(parts.length)requestAnimationFrame(tick);else{running=false;cx.clearRect(0,0,cv.width,cv.height);}
-}
-
-render();
-})();
-
-</script>
-</body>
-</html>
+let tt;function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("show"),3200);}
+/* ---------- start ---------- */
+if(loadLocal()){render();setTimeout(()=>toast("Your last attempt was restored. The timer is paused."),400);}else render();
+</script></body></html>
